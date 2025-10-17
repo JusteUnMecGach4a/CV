@@ -20,7 +20,7 @@
             
             /* Accents */
             --cv-primary-color: #FF4500; /* Orange Citrouille */
-            --cv-accent-color: #660000; /* Rouge Sang Très Assombri */
+            --cv-accent-color: #550000; /* Rouge Sang Encore Plus Profond */
         }
 
         /* Light Theme Overrides */
@@ -123,7 +123,7 @@
 
     </style>
 </head>
-<body data-theme="dark">
+<body>
 
     <!-- Conteneur principal du CV -->
     <div class="cv-container shadow-lg rounded-3 overflow-hidden mx-auto">
@@ -321,7 +321,10 @@
 
         function setTheme(theme) {
             body.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
+            // On enregistre la préférence uniquement si l'utilisateur a cliqué sur le bouton
+            if (localStorage.getItem('theme') !== theme) {
+                 localStorage.setItem('theme', theme);
+            }
 
             // Mise à jour de l'apparence du bouton
             if (theme === 'dark') {
@@ -335,16 +338,44 @@
             }
         }
 
-        // Gestion du clic sur le bouton
+        // Fonction pour déterminer le thème système
+        function getSystemTheme() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        // Gestion du clic sur le bouton: force le thème et l'enregistre
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = body.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             setTheme(newTheme);
+            // On force l'enregistrement de la nouvelle préférence utilisateur
+            localStorage.setItem('theme', newTheme);
         });
 
-        // Chargement initial: utilise le paramètre enregistré ou le mode sombre par défaut
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        setTheme(savedTheme);
+        // 1. Détection initiale: Préfère la sauvegarde locale, sinon le système
+        const savedTheme = localStorage.getItem('theme');
+        let initialTheme;
+
+        if (savedTheme) {
+            initialTheme = savedTheme;
+        } else {
+            // Si aucune préférence utilisateur, utilise le thème système
+            initialTheme = getSystemTheme();
+        }
+        
+        // Applique le thème initial
+        setTheme(initialTheme);
+        
+        // 2. Écoute des changements de thème système
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // L'écouteur gère les changements futurs du système
+        mediaQuery.addEventListener('change', (e) => {
+            // N'applique le changement système que s'il n'y a PAS de préférence utilisateur forcée
+            if (!localStorage.getItem('theme')) {
+                 setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
     </script>
 </body>
 </html>
