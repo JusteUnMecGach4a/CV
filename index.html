@@ -68,6 +68,11 @@
             padding: 2rem;
             text-align: center;
             position: relative; /* Nécessaire pour positionner le bouton */
+            transition: background-color 0.3s ease-in-out;
+        }
+        /* Effet de pulsation au survol sur l'en-tête */
+        .cv-header:hover {
+            box-shadow: 0 0 15px 3px var(--cv-accent-color);
         }
 
         /* Texte et liens dans l'en-tête */
@@ -95,8 +100,15 @@
         }
         .badge {
             background-color: var(--cv-accent-color) !important; 
-            color: var(--text-primary) !important; 
+            /* CORRECTION: FORCE LE TEXTE DES BADGES EN BLANC POUR UN MEILLEUR CONTRASTE DANS LES DEUX THÈMES */
+            color: #f8f9fa !important; 
             font-weight: 600;
+            transition: transform 0.2s ease-in-out;
+        }
+        /* Effet de pulsation au survol sur les badges */
+        .badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 5px 1px var(--cv-accent-color);
         }
         
         /* Tous les liens (sauf les badges) sont en couleur primaire (Orange) et cliquables */
@@ -119,6 +131,12 @@
             width: 1rem;
             height: 1rem;
             margin-right: 0.25rem;
+        }
+        
+        /* CORRECTION POUR LE THÈME CLAIR/SOMBRE DES TITRES DE LANGUES/INTÉRÊTS */
+        .text-custom-primary {
+            /* Utilise la couleur du texte principal définie par le thème */
+            color: var(--text-primary) !important;
         }
 
     </style>
@@ -231,7 +249,7 @@
                                 <li>Projet personnel de développement web axé sur un thème précis (horreur).</li>
                                 <li>Application des connaissances en structuration de contenu et en style pour une interface thématique.</li>
                                 <li>Déploiement du site en ligne (Vercel) et gestion du versionnement (GitHub).</li>
-                                <li><strong>Lien public du projet : <a href="https://jv-horreur.vercel.app//" target="_blank">jv-horreur-9kdz3u9do-justeunmecs-projects.vercel.app</a></strong></li>
+                                <li><strong>Lien public du projet : <a href="https://jv-horreur-9kdz3u9do-justeunmecs-projects.vercel.app/" target="_blank">jv-horreur-9kdz3u9do-justeunmecs-projects.vercel.app</a></strong></li>
                                 <li><strong>Code source : <a href="https://github.com/JusteUnMecGach4a/JV-horreur" target="_blank">JusteUnMecGach4a/JV-horreur</a></strong></li>
                             </ul>
                         </div>
@@ -255,10 +273,10 @@
                     <section class="mb-5">
                         <h2 class="section-title fs-4">LANGUES</h2>
                         <p class="text-secondary mb-1">
-                            <span class="fw-bold text-white">Français:</span> Langue maternelle
+                            <span class="fw-bold text-custom-primary">Français:</span> Langue maternelle
                         </p>
                         <p class="text-secondary mb-0">
-                            <span class="fw-bold text-white">Anglais</span>
+                            <span class="fw-bold text-custom-primary">Anglais</span>
                         </p>
                     </section>
 
@@ -266,7 +284,7 @@
                     <section class="mb-5">
                         <h2 class="section-title fs-4">CENTRES D'INTÉRÊT</h2>
                         <p class="text-secondary">
-                            <strong class="text-white">Jeux Vidéo :</strong> (Analyse de l'architecture des systèmes et la performance)
+                            <strong class="text-custom-primary">Jeux Vidéo :</strong> (Analyse de l'architecture des systèmes et la performance)
                         </p>
                     </section>
 
