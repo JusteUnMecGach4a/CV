@@ -14,10 +14,8 @@
         :root {
             /* Couleur principale: Orange Citrouille (pour les titres) */
             --cv-primary-color: #FF4500; 
-            /* Couleur d'accentuation: Noir Profond (pour la sidebar) */
-            --cv-accent-color: #121212; 
-            /* Couleur des badges/Header (Violet Sombre) */
-            --cv-badge-color: #4B0082; 
+            /* Couleur d'accentuation: Violet Sombre (pour les badges et l'en-tête) */
+            --cv-accent-color: #4B0082; 
             /* Fond du corps du CV (Gris Ténèbres) */
             --cv-container-bg: #212529; 
             /* Texte secondaire (Gris très clair) */
@@ -35,15 +33,6 @@
         .cv-container {
             max-width: 950px; 
             background-color: var(--cv-container-bg) !important;
-            /* Utilisation de Flexbox ou Grid pour la structure principale */
-            display: flex;
-            flex-direction: column; /* Par défaut, en colonne */
-        }
-        
-        @media (min-width: 992px) {
-            .cv-container {
-                flex-direction: row; /* En ligne sur desktop (Side + Main) */
-            }
         }
 
         /* Style pour la ligne de séparation sous les titres de section */
@@ -56,33 +45,12 @@
             display: block;
         }
         
-        /* En-tête (Nom et Titre) - Full Width */
+        /* En-tête (Nom et Titre) */
         .cv-header {
-            background-color: var(--cv-badge-color); /* Violet Sombre */
+            background-color: var(--cv-accent-color); 
             color: white;
             padding: 2rem;
             text-align: center;
-        }
-        
-        /* Colonne Principale de Contenu */
-        .cv-main-content {
-            flex-grow: 1; /* Prend l'espace restant */
-            padding: 3rem;
-        }
-
-        /* Sidebar (Collationne Contact et Compétences) */
-        .cv-sidebar {
-            background-color: var(--cv-accent-color); /* Noir Profond */
-            color: white;
-            padding: 3rem 2rem;
-            flex-shrink: 0;
-            width: 100%;
-        }
-
-        @media (min-width: 992px) {
-            .cv-sidebar {
-                width: 350px; /* Largeur fixe pour la sidebar sur desktop */
-            }
         }
         
         /* Style spécifique pour les titres de timeline */
@@ -101,7 +69,7 @@
             color: var(--cv-text-secondary) !important; 
         }
         .badge {
-            background-color: var(--cv-badge-color) !important; /* Badges en Violet */
+            background-color: var(--cv-accent-color) !important; /* Badges en Violet */
             color: white !important;
         }
         
@@ -120,148 +88,152 @@
         <!-- En-tête du CV (Couleur Violet Sombre - Full Width) -->
         <header class="cv-header">
             <h1 class="display-5 fw-bold mb-1">LÉO CANOVA-PRÉVOT</h1>
-            <p class="lead fw-light opacity-80 mb-0">Futur Technicien Cybersécurité | Réseaux et Développement Web</p>
+            <p class="lead fw-light opacity-80 mb-3">Futur Technicien Cybersécurité | Réseaux et Développement Web</p>
+            
+            <!-- Contact Info (Aligné horizontalement sous le titre) -->
+            <div class="d-flex justify-content-center flex-wrap gap-4 small">
+                <span class="text-white-50">
+                    <strong class="text-white">📞 Téléphone:</strong> 07 44 82 60 08
+                </span>
+                <span class="text-white-50">
+                    <strong class="text-white">📧 Email:</strong> <a href="mailto:coursdeleo@gmail.com" class="text-decoration-none fw-bold" style="color: #FF7F50 !important;">coursdeleo@gmail.com</a>
+                </span>
+                <span class="text-white-50">
+                    <strong class="text-white">📍 Adresse:</strong> Clermont-en-Argonne (55120), France
+                </span>
+            </div>
         </header>
 
-        <!-- Corps du CV : Flexbox Side + Main -->
-        <div class="d-flex flex-column flex-lg-row w-100">
+        <!-- Corps du CV (Structure Monocolonne puis Bicolonne Équilibrée) -->
+        <main class="p-4 p-md-5">
 
-            <!-- COLONNE LATÉRALE (Sidebar - Noir Profond) -->
-            <div class="cv-sidebar d-flex flex-column justify-content-between">
-                
-                <div>
-                    <!-- Contact Info (Déplacé dans la sidebar) -->
-                    <section class="mb-4">
-                        <h2 class="fs-4 fw-bold mb-3 border-bottom pb-2" style="border-color: #444!important;">CONTACT</h2>
-                        <p class="mb-1 small">
-                            <strong class="text-white">📞 Téléphone:</strong> 07 44 82 60 08
-                        </p>
-                        <p class="mb-1 small">
-                            <strong class="text-white">📧 Email:</strong> <a href="mailto:coursdeleo@gmail.com" class="text-decoration-none fw-bold" style="color: #FF7F50 !important;">coursdeleo@gmail.com</a>
-                        </p>
-                        <p class="mb-0 small">
-                            <strong class="text-white">📍 Adresse:</strong> Clermont-en-Argonne (55120), France
-                        </p>
-                    </section>
+            <!-- Accroche / Profil (Full Width) -->
+            <section class="mb-5">
+                <h2 class="section-title fs-4">PROFIL</h2>
+                <p class="text-secondary">
+                    Étudiant en <strong>1ère année de BTS CIEL option Informatique et Réseaux</strong>, je recherche activement un <strong>stage de 2 mois</strong> à effectuer durant les <strong>deux derniers mois de l'année scolaire</strong> afin d'appliquer et de développer mes compétences en sécurité des systèmes d'information. Passionné par les infrastructures réseaux et Linux, je suis motivé à contribuer activement à la sécurisation des environnements informatiques.
+                </p>
+                <p class="text-secondary small mt-3">
+                    À terme, mon objectif est de me spécialiser en <strong>Blue Team (défense)</strong> et d'approfondir mes connaissances en sécurité des architectures cloud (AWS / Azure).
+                </p>
+            </section>
+
+            <!-- Compétences Techniques (FULL WIDTH - Très visible) -->
+            <section class="mb-5">
+                <h2 class="section-title fs-4">COMPÉTENCES TECHNIQUES</h2>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge">Sécurité (Analyse de logs, Kali Linux)</span>
+                    <span class="badge">Réseaux (Cisco, Protocoles TCP/IP)</span>
+                    <span class="badge">Systèmes (Linux/Windows Server)</span>
+                    <span class="badge">Développement (HTML5/CSS3)</span>
+                    <span class="badge">IA Génératives (Prompting & Outils)</span>
+                    <span class="badge">Base de Données (SQL)</span>
+                    <span class="badge">Virtualisation (VMware/VirtualBox)</span>
+                    <span class="badge">Gestion de versions (Git)</span>
+                </div>
+            </section>
+
+            <!-- Contenu réparti en deux colonnes équilibrées -->
+            <div class="row">
+
+                <!-- COLONNE GAUCHE (Formation & Projets) -->
+                <div class="col-md-6 pb-4">
                     
-                    <hr class="my-4" style="border-color: #444;">
+                    <!-- Formation (Timeline) -->
+                    <section class="mb-5">
+                        <h2 class="section-title fs-4">FORMATION</h2>
 
-                    <!-- Compétences Techniques -->
-                    <section class="mb-4">
-                        <h2 class="fs-4 fw-bold mb-3 border-bottom pb-2" style="border-color: #444!important;">COMPÉTENCES</h2>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge">Sécurité (Analyse de logs, Kali Linux)</span>
-                            <span class="badge">Réseaux (Cisco, Protocoles TCP/IP)</span>
-                            <span class="badge">Systèmes (Linux/Windows Server)</span>
-                            <span class="badge">Développement (HTML5/CSS3)</span>
-                            <span class="badge">IA Génératives (Prompting & Outils)</span>
-                            <span class="badge">Base de Données (SQL)</span>
-                            <span class="badge">Virtualisation (VMware/VirtualBox)</span>
-                            <span class="badge">Gestion de versions (Git)</span>
+                        <div class="timeline-item">
+                            <h3 class="h5 card-title text-dark">BTS Cybersécurité, Informatique et Réseaux, Électronique option A : Informatique et Réseaux (CIEL IR)</h3>
+                            <p class="card-subtitle text-secondary fw-medium mb-1">Lycée Raymond Poincaré de Bar-le-Duc | 1ère Année (En cours)</p>
+                            <ul class="text-secondary ps-3 mt-2">
+                                <li>Étude approfondie des concepts de <strong>cybersécurité</strong>, administration réseau, et systèmes d'exploitation (Linux).</li>
+                                <li>Maitrise des protocoles de communication et des bases du développement web.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h3 class="h5 card-title text-dark">Baccalauréat STI2D</h3>
+                            <p class="card-subtitle text-secondary fw-medium mb-1">Lycée Raymond Poincaré | Obtenu en 2025</p>
                         </div>
                     </section>
-                    
-                    <hr class="my-4" style="border-color: #444;">
 
+                    <!-- Projets Clés (Timeline) -->
+                    <section class="mb-5">
+                        <h2 class="section-title fs-4">PROJETS CLÉS</h2>
+
+                        <div class="timeline-item">
+                            <h3 class="h5 card-title text-dark">Site Web "Nao" (Projet TP)</h3>
+                            <p class="card-subtitle text-secondary fw-medium mb-2">Technologies: HTML5, CSS3, JavaScript</p>
+                            <ul class="text-secondary ps-3 mt-2">
+                                <li>Conception et structuration complète d'un site à l'aide de balises sémantiques.</li>
+                                <li>Développement de la mise en page et du style via une feuille de style externe (gestion des unités et modèles de boîtes).</li>
+                                <li>Intégration de scripts <strong>JavaScript</strong> pour gérer l'interaction utilisateur et les événements dynamiques.</li>
+                                <li><strong>Lien public du projet : <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank">site-nao-final-m2fd.vercel.app</a></strong></li>
+                                <li><strong>Code source : <a href="https://github.com/JusteUnMecGach4a/Site-NAO-final" target="_blank">JusteUnMecGach4a/Site-NAO-final</a></strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h3 class="h5 card-title text-dark">Site Web sur les Jeux Vidéo d'Horreur</h3>
+                            <p class="card-subtitle text-secondary fw-medium mb-2">Technologies: HTML5, CSS3, JavaScript</p>
+                            <ul class="text-secondary ps-3 mt-2">
+                                <li><strong>Réalisé suite à une demande d'un surveillant du lycée.</strong></li>
+                                <li>Projet personnel de développement web axé sur un thème précis (horreur).</li>
+                                <li>Application des connaissances en structuration de contenu et en style pour une interface thématique.</li>
+                                <li>Déploiement du site en ligne (Vercel) et gestion du versionnement (GitHub).</li>
+                                <li><strong>Lien public du projet : <a href="https://jv-horreur-9kdz3u9do-justeunmecs-projects.vercel.app/" target="_blank">jv-horreur-9kdz3u9do-justeunmecs-projects.vercel.app</a></strong></li>
+                                <li><strong>Code source : <a href="https://github.com/JusteUnMecGach4a/JV-horreur" target="_blank">JusteUnMecGach4a/JV-horreur</a></strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h3 class="h5 card-title text-dark">Mise en Forme CSS Avancée (TP Académique)</h3>
+                            <p class="card-subtitle text-secondary fw-medium mb-2">Technologies: CSS (Sélecteurs de balises, unités relatives)</p>
+                            <ul class="text-secondary ps-3 mt-2">
+                                <li>Expérimentation sur les unités absolues et relatives (%, px, em, rem) pour le responsive design.</li>
+                                <li>Formatage de listes, tableaux et liens hypertextes sans utiliser d'identifiants ou de classes.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- COLONNE DROITE (Infos Annexes) -->
+                <div class="col-md-6 pt-4 pt-md-0 ps-md-4">
+                    
                     <!-- Langues -->
-                    <section class="mb-4">
-                        <h2 class="fs-4 fw-bold mb-3 border-bottom pb-2" style="border-color: #444!important;">LANGUES</h2>
-                        <p class="small mb-1">
+                    <section class="mb-5">
+                        <h2 class="section-title fs-4">LANGUES</h2>
+                        <p class="text-secondary mb-1">
                             <span class="fw-bold text-white">Français:</span> Langue maternelle
                         </p>
-                        <p class="small mb-0">
+                        <p class="text-secondary mb-0">
                             <span class="fw-bold text-white">Anglais</span>
                         </p>
                     </section>
-                    
-                    <hr class="my-4" style="border-color: #444;">
 
                     <!-- Centres d'Intérêt -->
-                    <section class="mb-2">
-                        <h2 class="fs-4 fw-bold mb-3 border-bottom pb-2" style="border-color: #444!important;">INTÉRÊTS</h2>
-                        <p class="small">
+                    <section class="mb-5">
+                        <h2 class="section-title fs-4">CENTRES D'INTÉRÊT</h2>
+                        <p class="text-secondary">
                             <strong class="text-white">Jeux Vidéo :</strong> (Analyse de l'architecture des systèmes et la performance)
                         </p>
                     </section>
+
+                    <!-- Espace libre pour équilibrer la mise en page si besoin -->
+                    <section class="d-none d-md-block">
+                        <h2 class="section-title fs-4" style="visibility: hidden;">_</h2>
+                        <p class="text-secondary small mt-5 pt-5">
+                            <small class="opacity-50">Document généré par IA, Thème Halloween.</small>
+                        </p>
+                    </section>
+
                 </div>
 
             </div>
 
-            <!-- COLONNE PRINCIPALE (Contenu - Gris Ténèbres) -->
-            <main class="cv-main-content">
-
-                <!-- Accroche / Profil -->
-                <section class="mb-5">
-                    <h2 class="section-title fs-4">PROFIL</h2>
-                    <p class="text-secondary">
-                        Étudiant en <strong>1ère année de BTS CIEL option Informatique et Réseaux</strong>, je recherche activement un <strong>stage de 2 mois</strong> à effectuer durant les <strong>deux derniers mois de l'année scolaire</strong> afin d'appliquer et de développer mes compétences en sécurité des systèmes d'information. Passionné par les infrastructures réseaux et Linux, je suis motivé à contribuer activement à la sécurisation des environnements informatiques.
-                    </p>
-                    <p class="text-secondary small mt-3">
-                        À terme, mon objectif est de me spécialiser en <strong>Blue Team (défense)</strong> et d'approfondir mes connaissances en sécurité des architectures cloud (AWS / Azure).
-                    </p>
-                </section>
-
-                <!-- Formation (Timeline) -->
-                <section class="mb-5">
-                    <h2 class="section-title fs-4">FORMATION</h2>
-
-                    <div class="timeline-item">
-                        <h3 class="h5 card-title text-dark">BTS Cybersécurité, Informatique et Réseaux, Électronique option A : Informatique et Réseaux (CIEL IR)</h3>
-                        <p class="card-subtitle text-secondary fw-medium mb-1">Lycée Raymond Poincaré de Bar-le-Duc | 1ère Année (En cours)</p>
-                        <ul class="text-secondary ps-3 mt-2">
-                            <li>Étude approfondie des concepts de <strong>cybersécurité</strong>, administration réseau, et systèmes d'exploitation (Linux).</li>
-                            <li>Maitrise des protocoles de communication et des bases du développement web.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h3 class="h5 card-title text-dark">Baccalauréat STI2D</h3>
-                        <p class="card-subtitle text-secondary fw-medium mb-1">Lycée Raymond Poincaré | Obtenu en 2025</p>
-                    </div>
-                </section>
-                
-                <!-- Projets Clés (Timeline) -->
-                <section class="mb-5">
-                    <h2 class="section-title fs-4">PROJETS CLÉS</h2>
-
-                    <div class="timeline-item">
-                        <h3 class="h5 card-title text-dark">Site Web "Nao" (Projet TP)</h3>
-                        <p class="card-subtitle text-secondary fw-medium mb-2">Technologies: HTML5, CSS3, JavaScript</p>
-                        <ul class="text-secondary ps-3 mt-2">
-                            <li>Conception et structuration complète d'un site à l'aide de balises sémantiques.</li>
-                            <li>Développement de la mise en page et du style via une feuille de style externe (gestion des unités et modèles de boîtes).</li>
-                            <li>Intégration de scripts <strong>JavaScript</strong> pour gérer l'interaction utilisateur et les événements dynamiques.</li>
-                            <li><strong>Lien public du projet : <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank">site-nao-final-m2fd.vercel.app</a></strong></li>
-                            <li><strong>Code source : <a href="https://github.com/JusteUnMecGach4a/Site-NAO-final" target="_blank">JusteUnMecGach4a/Site-NAO-final</a></strong></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h3 class="h5 card-title text-dark">Site Web sur les Jeux Vidéo d'Horreur</h3>
-                        <p class="card-subtitle text-secondary fw-medium mb-2">Technologies: HTML5, CSS3, JavaScript</p>
-                        <ul class="text-secondary ps-3 mt-2">
-                            <li><strong>Réalisé suite à une demande d'un surveillant du lycée.</strong></li>
-                            <li>Projet personnel de développement web axé sur un thème précis (horreur).</li>
-                            <li>Application des connaissances en structuration de contenu et en style pour une interface thématique.</li>
-                            <li>Déploiement du site en ligne (Vercel) et gestion du versionnement (GitHub).</li>
-                            <li><strong>Lien public du projet : <a href="https://jv-horreur-9kdz3u9do-justeunmecs-projects.vercel.app/" target="_blank">jv-horreur-9kdz3u9do-justeunmecs-projects.vercel.app</a></strong></li>
-                            <li><strong>Code source : <a href="https://github.com/JusteUnMecGach4a/JV-horreur" target="_blank">JusteUnMecGach4a/JV-horreur</a></strong></li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h3 class="h5 card-title text-dark">Mise en Forme CSS Avancée (TP Académique)</h3>
-                        <p class="card-subtitle text-secondary fw-medium mb-2">Technologies: CSS (Sélecteurs de balises, unités relatives)</p>
-                        <ul class="text-secondary ps-3 mt-2">
-                            <li>Expérimentation sur les unités absolues et relatives (%, px, em, rem) pour le responsive design.</li>
-                            <li>Formatage de listes, tableaux et liens hypertextes sans utiliser d'identifiants ou de classes.</li>
-                        </ul>
-                    </div>
-                </section>
-
-            </main>
-
-        </div>
+        </main>
 
     </div>
 
