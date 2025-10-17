@@ -85,8 +85,10 @@
             background-color: var(--cv-accent-color) !important; /* Badges en Violet */
             color: white !important;
         }
-        .text-decoration-none.text-secondary {
-             color: var(--cv-primary-color) !important; /* Liens en Orange */
+        
+        /* Tous les liens (sauf les badges) sont en couleur primaire (Orange) et cliquables */
+        a:not(.badge) {
+             color: var(--cv-primary-color) !important; 
         }
     </style>
 </head>
@@ -114,6 +116,7 @@
                         <small class="fw-bold">📞 Téléphone:</small> 07 44 82 60 08
                     </p>
                     <p class="mb-1 text-secondary">
+                        <!-- LIEN EMAIL MIS À JOUR AVEC mailto: et couleur orange -->
                         <small class="fw-bold">📧 Email:</small> <a href="mailto:coursdeleo@gmail.com" class="text-decoration-none">coursdeleo@gmail.com</a>
                     </p>
                     <p class="mb-0 text-secondary">
