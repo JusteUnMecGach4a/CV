@@ -16,9 +16,9 @@
             --text-primary: #212529;
             --text-secondary: #6c757d;
             
-            /* Accents par défaut (Neutre/Clair) */
-            --cv-primary-color: #007bff; /* Bleu standard */
-            --cv-accent-color: #0056b3; /* Bleu foncé */
+            /* Accents par défaut (Neutre/Clair) - VOTRE BLEU TURQUOISE */
+            --cv-primary-color: #1ABC9C; /* Turquoise Vif pour titres, badges, liens */
+            --cv-accent-color: #117A65; /* Turquoise Foncé pour le fond de l'en-tête */
         }
 
         /* Christmas Theme Overrides (Thème Foncé de Noël) */
@@ -30,7 +30,7 @@
             --text-secondary: #ced4da; /* Gris clair */
             
             /* Accents de Noël */
-            --cv-primary-color: #B22222; /* Firebrick / Rouge Noël */
+            --cv-primary-color: #CD5C5C; /* Indian Red / Rouge de Noël plus pâle */
             --cv-accent-color: #006400; /* Dark Green / Vert Sapin Profond */
         }
         
@@ -146,7 +146,7 @@
             <button id="theme-toggle" class="btn btn-sm btn-light">
                 </button>
 
-            <h1 class="display-5 fw-bold mb-1">LÉO CANOVA-PRÉVOT</h1>
+            <h1 class="display-5 fw-bold mb-1">LÉO CANOVA-PRÉVÔT</h1>
             <p class="lead fw-light opacity-80 mb-3">Futur Technicien Cybersécurité | Réseaux et Développement Web</p>
             
             <div class="d-flex justify-content-center flex-wrap gap-4 small">
@@ -328,8 +328,8 @@
         // Détermine la classe du bouton pour le thème ACTUEL (pour le contraste avec l'en-tête)
         function getThemeButtonClass(currentTheme) {
              // 'christmas' (en-tête vert foncé) a besoin de btn-light
-             // 'light' (en-tête bleu par défaut) a besoin de btn-dark
-            return (currentTheme === 'christmas') ? 'btn-light' : 'btn-dark';
+             // 'light' (en-tête turquoise foncé par défaut) a besoin de btn-light (pour un bon contraste)
+            return (currentTheme === 'christmas' || currentTheme === 'light') ? 'btn-light' : 'btn-dark';
         }
 
         function setTheme(theme) {
