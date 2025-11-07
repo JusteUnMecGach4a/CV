@@ -4,36 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae - Léo Canova-Prévot</title>
-    <!-- Favicon (Icône de cadenas en orange citrouille) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF4500'><path d='M12 1C8.686 1 6 3.686 6 7v3H4v12h16V10h-2V7c0-3.314-2.686-6-6-6zm0 2c2.206 0 4 1.794 4 4v3H8V7c0-2.206 1.794-4 4-4zm-4 9h8v8H8v-8z'/></svg>">
-    <!-- Chargement de Bootstrap 5.3 via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFD700'><path d='M12 1C8.686 1 6 3.686 6 7v3H4v12h16V10h-2V7c0-3.314-2.686-6-6-6zm0 2c2.206 0 4 1.794 4 4v3H8V7c0-2.206 1.794-4 4-4zm-4 9h8v8H8v-8z'/></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <style>
-        /* --- DÉFINITION DES THÈMES (Dark Theme est la configuration par défaut) --- */
+        /* --- DÉFINITION DES THÈMES --- */
         :root {
-            /* Palette par défaut (Dark/Halloween) */
+            /* Palette par défaut (Neutre/Professionnel) */
+            --bg-body: #f1f3f5;
+            --bg-container: #ffffff;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            
+            /* Accents par défaut (Neutre) */
+            --cv-primary-color: #007bff; /* Bleu standard */
+            --cv-accent-color: #0056b3; /* Bleu foncé */
+        }
+
+        /* Dark Theme Overrides */
+        [data-theme="dark"] {
             --bg-body: #1a1a1a;
             --bg-container: #212529;
             --text-primary: #f8f9fa;
             --text-secondary: #adb5bd;
             
-            /* Accents */
+            /* Accents Dark/Halloween d'origine */
             --cv-primary-color: #FF4500; /* Orange Citrouille */
-            --cv-accent-color: #550000; /* Rouge Sang Encore Plus Profond */
+            --cv-accent-color: #550000; /* Rouge Sang */
         }
 
-        /* Light Theme Overrides */
-        [data-theme="light"] {
-            /* Palette Inversion */
-            --bg-body: #f8f9fa;
-            --bg-container: #ffffff;
-            --text-primary: #212529; /* Dark Gray for main text */
-            --text-secondary: #6c757d; /* Medium Gray for secondary text */
+        /* Christmas Theme Overrides */
+        [data-theme="christmas"] {
+            /* Palette de Noël (Foncé, comme un ciel étoilé ou un fond velours) */
+            --bg-body: #0a0a0a; /* Noir profond */
+            --bg-container: #1b1b1b; /* Gris très foncé */
+            --text-primary: #f8f9fa; /* Blanc neige */
+            --text-secondary: #ced4da; /* Gris clair */
             
-            /* Accents restent les mêmes pour la marque */
-            --cv-primary-color: #FF4500; 
-            --cv-accent-color: #8B0000; /* Rouge un peu moins foncé que le Dark Theme pour le contraste */
+            /* Accents de Noël */
+            --cv-primary-color: #B22222; /* Firebrick / Rouge Noël */
+            --cv-accent-color: #006400; /* Dark Green / Vert Sapin Profond */
         }
         
         /* --- APPLICATION DES VARIABLES AUX ÉLÉMENTS --- */
@@ -63,16 +73,16 @@
         
         /* En-tête (Nom et Titre) */
         .cv-header {
-            background-color: var(--cv-accent-color);
+            background-color: var(--cv-accent-color); /* Vert Sapin */
             color: white; 
             padding: 2rem;
             text-align: center;
-            position: relative; /* Nécessaire pour positionner le bouton */
+            position: relative;
             transition: background-color 0.3s ease-in-out;
         }
-        /* Effet de pulsation au survol sur l'en-tête */
+        /* Effet de pulsation au survol sur l'en-tête (utilise la couleur primaire: Rouge) */
         .cv-header:hover {
-            box-shadow: 0 0 15px 3px var(--cv-accent-color);
+            box-shadow: 0 0 15px 3px var(--cv-primary-color);
         }
 
         /* Texte et liens dans l'en-tête */
@@ -85,7 +95,7 @@
 
         /* Style spécifique pour les titres de timeline */
         .timeline-item {
-            border-left: 3px solid var(--cv-primary-color); 
+            border-left: 3px solid var(--cv-primary-color); /* Rouge Noël */
             padding-left: 20px;
             margin-left: 10px;
             margin-bottom: 25px;
@@ -99,19 +109,18 @@
             color: var(--text-secondary) !important; 
         }
         .badge {
-            background-color: var(--cv-accent-color) !important; 
-            /* CORRECTION: FORCE LE TEXTE DES BADGES EN BLANC POUR UN MEILLEUR CONTRASTE DANS LES DEUX THÈMES */
-            color: #f8f9fa !important; 
+            background-color: var(--cv-primary-color) !important; /* Rouge Noël */
+            color: #f8f9fa !important; /* Texte en blanc neige pour contraste */
             font-weight: 600;
             transition: transform 0.2s ease-in-out;
         }
         /* Effet de pulsation au survol sur les badges */
         .badge:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 5px 1px var(--cv-accent-color);
+            box-shadow: 0 0 5px 1px var(--cv-primary-color);
         }
         
-        /* Tous les liens (sauf les badges) sont en couleur primaire (Orange) et cliquables */
+        /* Tous les liens sont en couleur primaire (Rouge Noël) et cliquables */
         a:not(.badge) {
              color: var(--cv-primary-color) !important; 
         }
@@ -133,9 +142,8 @@
             margin-right: 0.25rem;
         }
         
-        /* CORRECTION POUR LE THÈME CLAIR/SOMBRE DES TITRES DE LANGUES/INTÉRÊTS */
+        /* CORRECTION POUR LES TITRES DE LANGUES/INTÉRÊTS */
         .text-custom-primary {
-            /* Utilise la couleur du texte principal définie par le thème */
             color: var(--text-primary) !important;
         }
 
@@ -143,21 +151,16 @@
 </head>
 <body>
 
-    <!-- Conteneur principal du CV -->
     <div class="cv-container shadow-lg rounded-3 overflow-hidden mx-auto">
 
-        <!-- En-tête du CV (Couleur ROUGE SANG - Full Width) -->
         <header class="cv-header">
             
-            <!-- Bouton Thème Toggle -->
             <button id="theme-toggle" class="btn btn-sm btn-light">
-                <!-- Icône et texte mis à jour par JavaScript -->
-            </button>
+                </button>
 
             <h1 class="display-5 fw-bold mb-1">LÉO CANOVA-PRÉVOT</h1>
             <p class="lead fw-light opacity-80 mb-3">Futur Technicien Cybersécurité | Réseaux et Développement Web</p>
             
-            <!-- Contact Info (Aligné horizontalement sous le titre) -->
             <div class="d-flex justify-content-center flex-wrap gap-4 small">
                 <span class="text-white">
                     <strong class="text-white">📞 Téléphone:</strong> 07 44 82 60 08
@@ -171,10 +174,8 @@
             </div>
         </header>
 
-        <!-- Corps du CV (Structure Monocolonne puis Bicolonne Équilibrée) -->
         <main class="p-4 p-md-5">
 
-            <!-- Accroche / Profil (Full Width) -->
             <section class="mb-5">
                 <h2 class="section-title fs-4">PROFIL</h2>
                 <p class="text-secondary">
@@ -187,7 +188,6 @@
                 </p>
             </section>
 
-            <!-- Compétences Techniques (FULL WIDTH - Très visible) -->
             <section class="mb-5">
                 <h2 class="section-title fs-4">COMPÉTENCES TECHNIQUES</h2>
                 <div class="d-flex flex-wrap gap-2">
@@ -202,13 +202,10 @@
                 </div>
             </section>
 
-            <!-- Contenu réparti en deux colonnes équilibrées -->
             <div class="row">
 
-                <!-- COLONNE GAUCHE (Formation & Projets) -->
                 <div class="col-md-6 pb-4">
                     
-                    <!-- Formation (Timeline) -->
                     <section class="mb-5">
                         <h2 class="section-title fs-4">FORMATION</h2>
 
@@ -227,7 +224,6 @@
                         </div>
                     </section>
 
-                    <!-- Projets Clés (Timeline) -->
                     <section class="mb-5">
                         <h2 class="section-title fs-4">PROJETS CLÉS</h2>
 
@@ -239,7 +235,7 @@
                                 <li>Développement de la mise en page et du style via une feuille de style externe (gestion des unités et modèles de boîtes).</li>
                                 <li>Intégration de scripts <strong>JavaScript</strong> pour gérer l'interaction utilisateur et les événements dynamiques.</li>
                                 <li><strong>Lien public du projet : <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank">site-nao-final-m2fd.vercel.app</a></strong></li>
-                            <li><strong>Code source : <a href="https://github.com/JusteUnMecGach4a/Site-NAO-final" target="_blank">JusteUnMecGach4a/Site-NAO-final</a></strong></li>
+                                <li><strong>Code source : <a href="https://github.com/JusteUnMecGach4a/Site-NAO-final" target="_blank">JusteUnMecGach4a/Site-NAO-final</a></strong></li>
                             </ul>
                         </div>
                         
@@ -259,10 +255,8 @@
 
                 </div>
 
-                <!-- COLONNE DROITE (Infos Annexes) -->
                 <div class="col-md-6 pt-4 pt-md-0 ps-md-4">
                     
-                    <!-- Langues -->
                     <section class="mb-5">
                         <h2 class="section-title fs-4">LANGUES</h2>
                         <p class="text-secondary mb-1">
@@ -273,7 +267,6 @@
                         </p>
                     </section>
 
-                    <!-- Centres d'Intérêt -->
                     <section class="mb-5">
                         <h2 class="section-title fs-4">CENTRES D'INTÉRÊT</h2>
                         <p class="text-secondary">
@@ -281,7 +274,6 @@
                         </p>
                     </section>
 
-                    <!-- Espace libre pour équilibrer la mise en page si besoin -->
                     <section class="d-none d-md-block">
                         <h2 class="section-title fs-4" style="visibility: hidden;">_</h2>
                     </section>
@@ -294,7 +286,6 @@
 
     </div>
 
-    <!-- Message box pour remplacer alert() (conservé pour la compatibilité) -->
     <div id="message-box" class="fixed-top mt-3 me-3 p-3 rounded-3 shadow-lg" style="width: 300px; z-index: 1000; opacity: 0; transition: opacity 0.3s, visibility 0.3s, background-color 0.3s; visibility: hidden;"></div>
     <script>
         /**
@@ -323,68 +314,76 @@
         const body = document.body;
         const themeToggleBtn = document.getElementById('theme-toggle');
 
-        // SVG pour les icônes (Soleil et Lune)
+        // SVG pour les icônes
         const sunIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-.06L15.47 7.72a.75.75 0 001.06 1.06l2.364-2.364a.75.75 0 00-.06-1.06zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18a.75.75 0 01.75-.75zM6.106 18.894a.75.75 0 00-.06 1.06l2.364 2.364a.75.75 0 001.06-1.06L7.166 17.834a.75.75 0 00-1.06.06zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 001.06-.06l2.364-2.364a.75.75 0 00-1.06-1.06L5.106 4.046a.75.75 0 00.06 1.06z"/></svg> Clair`;
         const moonIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 109 9c0-.46-.04-.91-.12-1.35a6.001 6.001 0 01-5.77-9.45zM12 1a11 11 0 110 22 11 11 0 010-22z"/></svg> Sombre`;
+        const starIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg> Noël`;
+
+        // Tableau des thèmes
+        const themes = ['christmas', 'dark', 'light'];
+
+        function getNextTheme(currentTheme) {
+            const currentIndex = themes.indexOf(currentTheme);
+            const nextIndex = (currentIndex + 1) % themes.length;
+            return themes[nextIndex];
+        }
+
+        function getThemeIcon(theme) {
+            switch(theme) {
+                case 'light': return sunIcon;
+                case 'dark': return moonIcon;
+                case 'christmas': return starIcon;
+                default: return sunIcon;
+            }
+        }
+        
+        function getThemeButtonClass(theme) {
+             // Rend le bouton plus visible sur le Vert Sapin de l'en-tête (surtout pour le Dark Theme)
+            return (theme === 'dark' || theme === 'christmas') ? 'btn-light' : 'btn-dark';
+        }
 
         function setTheme(theme) {
             body.setAttribute('data-theme', theme);
+            
             // On enregistre la préférence uniquement si l'utilisateur a cliqué sur le bouton
-            if (localStorage.getItem('theme') !== theme) {
-                 localStorage.setItem('theme', theme);
-            }
+            localStorage.setItem('theme', theme);
 
             // Mise à jour de l'apparence du bouton
-            if (theme === 'dark') {
-                themeToggleBtn.innerHTML = sunIcon;
-                themeToggleBtn.classList.remove('btn-dark');
-                themeToggleBtn.classList.add('btn-light');
-            } else {
-                themeToggleBtn.innerHTML = moonIcon;
-                themeToggleBtn.classList.remove('btn-light');
-                themeToggleBtn.classList.add('btn-dark');
-            }
+            themeToggleBtn.innerHTML = getThemeIcon(getNextTheme(theme));
+            themeToggleBtn.className = `btn btn-sm ${getThemeButtonClass(theme)}`;
         }
 
-        // Fonction pour déterminer le thème système
+        // Fonction pour déterminer le thème système (Light ou Dark)
         function getSystemTheme() {
             return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
 
-        // Gestion du clic sur le bouton: force le thème et l'enregistre
+        // Gestion du clic sur le bouton: passe au thème suivant
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const newTheme = getNextTheme(currentTheme);
             setTheme(newTheme);
-            // On force l'enregistrement de la nouvelle préférence utilisateur
-            localStorage.setItem('theme', newTheme);
         });
 
-        // 1. Détection initiale: Préfère la sauvegarde locale, sinon le système
+        // 1. Détection initiale: Préfère la sauvegarde locale, sinon le thème de Noël par défaut
         const savedTheme = localStorage.getItem('theme');
         let initialTheme;
 
-        if (savedTheme) {
+        if (savedTheme && themes.includes(savedTheme)) {
             initialTheme = savedTheme;
         } else {
-            // Si aucune préférence utilisateur, utilise le thème système
-            initialTheme = getSystemTheme();
+            // Si aucune préférence utilisateur, démarre par défaut en thème de Noël (ou Dark si Noël n'existe pas)
+            initialTheme = 'christmas'; 
         }
         
         // Applique le thème initial
         setTheme(initialTheme);
         
-        // 2. Écoute des changements de thème système
-        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        // 2. Écoute des changements de thème système (NE DEVRAIT PAS CHANGER LE THÈME FORCÉMENT)
+        // La logique d'origine qui appliquait le thème système s'il n'y avait pas de préférence enregistrée
+        // est supprimée pour toujours privilégier le thème enregistré ou le thème de Noël par défaut.
+        // Si l'utilisateur clique, sa préférence est enregistrée et prime sur le système.
         
-        // L'écouteur gère les changements futurs du système
-        mediaQuery.addEventListener('change', (e) => {
-            // N'applique le changement système que s'il n'y a PAS de préférence utilisateur forcée
-            if (!localStorage.getItem('theme')) {
-                 setTheme(e.matches ? 'dark' : 'light');
-            }
-        });
     </script>
 </body>
 </html>
-
