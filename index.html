@@ -10,30 +10,18 @@
     <style>
         /* --- DÉFINITION DES THÈMES --- */
         :root {
-            /* Palette par défaut (Neutre/Professionnel) */
+            /* Palette par défaut (Light/Clair/Professionnel) */
             --bg-body: #f1f3f5;
             --bg-container: #ffffff;
             --text-primary: #212529;
             --text-secondary: #6c757d;
             
-            /* Accents par défaut (Neutre) */
+            /* Accents par défaut (Neutre/Clair) */
             --cv-primary-color: #007bff; /* Bleu standard */
             --cv-accent-color: #0056b3; /* Bleu foncé */
         }
 
-        /* Dark Theme Overrides */
-        [data-theme="dark"] {
-            --bg-body: #1a1a1a;
-            --bg-container: #212529;
-            --text-primary: #f8f9fa;
-            --text-secondary: #adb5bd;
-            
-            /* Accents Dark/Halloween d'origine */
-            --cv-primary-color: #FF4500; /* Orange Citrouille */
-            --cv-accent-color: #550000; /* Rouge Sang */
-        }
-
-        /* Christmas Theme Overrides */
+        /* Christmas Theme Overrides (Thème Foncé de Noël) */
         [data-theme="christmas"] {
             /* Palette de Noël (Foncé, comme un ciel étoilé ou un fond velours) */
             --bg-body: #0a0a0a; /* Noir profond */
@@ -73,14 +61,14 @@
         
         /* En-tête (Nom et Titre) */
         .cv-header {
-            background-color: var(--cv-accent-color); /* Vert Sapin */
+            background-color: var(--cv-accent-color);
             color: white; 
             padding: 2rem;
             text-align: center;
             position: relative;
             transition: background-color 0.3s ease-in-out;
         }
-        /* Effet de pulsation au survol sur l'en-tête (utilise la couleur primaire: Rouge) */
+        /* Effet de pulsation au survol sur l'en-tête (utilise la couleur primaire) */
         .cv-header:hover {
             box-shadow: 0 0 15px 3px var(--cv-primary-color);
         }
@@ -95,7 +83,7 @@
 
         /* Style spécifique pour les titres de timeline */
         .timeline-item {
-            border-left: 3px solid var(--cv-primary-color); /* Rouge Noël */
+            border-left: 3px solid var(--cv-primary-color);
             padding-left: 20px;
             margin-left: 10px;
             margin-bottom: 25px;
@@ -109,8 +97,8 @@
             color: var(--text-secondary) !important; 
         }
         .badge {
-            background-color: var(--cv-primary-color) !important; /* Rouge Noël */
-            color: #f8f9fa !important; /* Texte en blanc neige pour contraste */
+            background-color: var(--cv-primary-color) !important;
+            color: #f8f9fa !important;
             font-weight: 600;
             transition: transform 0.2s ease-in-out;
         }
@@ -120,7 +108,7 @@
             box-shadow: 0 0 5px 1px var(--cv-primary-color);
         }
         
-        /* Tous les liens sont en couleur primaire (Rouge Noël) et cliquables */
+        /* Tous les liens sont en couleur primaire et cliquables */
         a:not(.badge) {
              color: var(--cv-primary-color) !important; 
         }
@@ -314,48 +302,47 @@
         const body = document.body;
         const themeToggleBtn = document.getElementById('theme-toggle');
 
-        // SVG pour les icônes
-        const sunIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-.06L15.47 7.72a.75.75 0 001.06 1.06l2.364-2.364a.75.75 0 00-.06-1.06zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18a.75.75 0 01.75-.75zM6.106 18.894a.75.75 0 00-.06 1.06l2.364 2.364a.75.75 0 001.06-1.06L7.166 17.834a.75.75 0 00-1.06.06zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 001.06-.06l2.364-2.364a.75.75 0 00-1.06-1.06L5.106 4.046a.75.75 0 00.06 1.06z"/></svg> Clair`;
-        const moonIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 109 9c0-.46-.04-.91-.12-1.35a6.001 6.001 0 01-5.77-9.45zM12 1a11 11 0 110 22 11 11 0 010-22z"/></svg> Sombre`;
-        const starIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg> Noël`;
+        // SVG pour les icônes (Soleil pour Clair, Étoile pour Noël)
+        const sunIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-.06L15.47 7.72a.75.75 0 001.06 1.06l2.364-2.364a.75.75 0 00-.06-1.06zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18a.75.75 0 01.75-.75zM6.106 18.894a.75.75 0 00-.06 1.06l2.364 2.364a.75.75 0 001.06-1.06L7.166 17.834a.75.75 0 00-1.06.06zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 001.06-.06l2.364-2.364a.75.75 0 00-1.06-1.06L5.106 4.046a.75.75 0 00.06 1.06z"/></svg>`;
+        const starIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>`;
 
-        // Tableau des thèmes
-        const themes = ['christmas', 'dark', 'light'];
+        // Tableau des thèmes (seulement Noël et Clair)
+        const themes = ['christmas', 'light'];
 
         function getNextTheme(currentTheme) {
             const currentIndex = themes.indexOf(currentTheme);
+            // Cycle: christmas (0) -> light (1) -> christmas (0)
             const nextIndex = (currentIndex + 1) % themes.length;
             return themes[nextIndex];
         }
 
-        function getThemeIcon(theme) {
-            switch(theme) {
-                case 'light': return sunIcon;
-                case 'dark': return moonIcon;
-                case 'christmas': return starIcon;
-                default: return sunIcon;
+        // Détermine l'icône et le texte pour le thème SUIVANT
+        function getThemeTextAndIcon(nextTheme) {
+            switch(nextTheme) {
+                case 'light': return sunIcon + " Clair";
+                case 'christmas': return starIcon + " Noël";
+                default: return sunIcon + " Clair";
             }
         }
         
-        function getThemeButtonClass(theme) {
-             // Rend le bouton plus visible sur le Vert Sapin de l'en-tête (surtout pour le Dark Theme)
-            return (theme === 'dark' || theme === 'christmas') ? 'btn-light' : 'btn-dark';
+        // Détermine la classe du bouton pour le thème ACTUEL (pour le contraste avec l'en-tête)
+        function getThemeButtonClass(currentTheme) {
+             // 'christmas' (en-tête vert foncé) a besoin de btn-light
+             // 'light' (en-tête bleu par défaut) a besoin de btn-dark
+            return (currentTheme === 'christmas') ? 'btn-light' : 'btn-dark';
         }
 
         function setTheme(theme) {
             body.setAttribute('data-theme', theme);
             
-            // On enregistre la préférence uniquement si l'utilisateur a cliqué sur le bouton
+            // On enregistre la préférence
             localStorage.setItem('theme', theme);
 
+            const nextTheme = getNextTheme(theme);
+            
             // Mise à jour de l'apparence du bouton
-            themeToggleBtn.innerHTML = getThemeIcon(getNextTheme(theme));
+            themeToggleBtn.innerHTML = getThemeTextAndIcon(nextTheme);
             themeToggleBtn.className = `btn btn-sm ${getThemeButtonClass(theme)}`;
-        }
-
-        // Fonction pour déterminer le thème système (Light ou Dark)
-        function getSystemTheme() {
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
 
         // Gestion du clic sur le bouton: passe au thème suivant
@@ -372,17 +359,12 @@
         if (savedTheme && themes.includes(savedTheme)) {
             initialTheme = savedTheme;
         } else {
-            // Si aucune préférence utilisateur, démarre par défaut en thème de Noël (ou Dark si Noël n'existe pas)
+            // Si aucune préférence utilisateur, démarre par défaut en thème de Noël
             initialTheme = 'christmas'; 
         }
         
         // Applique le thème initial
         setTheme(initialTheme);
-        
-        // 2. Écoute des changements de thème système (NE DEVRAIT PAS CHANGER LE THÈME FORCÉMENT)
-        // La logique d'origine qui appliquait le thème système s'il n'y avait pas de préférence enregistrée
-        // est supprimée pour toujours privilégier le thème enregistré ou le thème de Noël par défaut.
-        // Si l'utilisateur clique, sa préférence est enregistrée et prime sur le système.
         
     </script>
 </body>
