@@ -16,3 +16,7 @@ Je me distingue par une **attention exceptionnelle aux détails, une grande capa
 1. **Site Web "Nao" :** [site-nao-final-m2fd.vercel.app](https://site-nao-final-m2fd.vercel.app/)
    * Conception et structuration complète d'un site web utilisant des balises sémantiques.
    * **Contexte :** Projet réalisé lors d'un **travail pratique (TP) de cours**.
+
+## 🔗 Liens Utiles
+* **Code Source du CV :** [GitHub Repository](https://github.com/JusteUnMecGach4a/CV/tree/main)
+* **Email :** [coursdeleo@gmail.com](mailto:coursdeleo@gmail.com)
