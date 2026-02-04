@@ -5,174 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae - Léo Canova-Prévot</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFD700'><path d='M12 1C8.686 1 6 3.686 6 7v3H4v12h16V10h-2V7c0-3.314-2.686-6-6-6zm0 2c2.206 0 4 1.794 4 4v3H8V7c0-2.206 1.794-4 4-4zm-4 9h8v8H8v-8z'/></svg>">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
-    <style>
-        /* --- DÉFINITION DES THÈMES --- */
-        :root {
-            /* Palette par défaut (Light/Clair/Professionnel) - VOTRE BLEU TURQUOISE */
-            --bg-body: #f1f3f5;
-            --bg-container: #ffffff;
-            --text-primary: #212529;
-            --text-secondary: #6c757d;
-            
-            /* Accents par défaut (Clair) */
-            --cv-primary-color: #1ABC9C; /* Turquoise Vif pour titres, badges, liens */
-            --cv-accent-color: #117A65; /* Turquoise Foncé pour le fond de l'en-tête */
-        }
-
-        /* Christmas Theme Overrides (Thème Foncé de Noël) */
-        [data-theme="christmas"] {
-            /* Palette de Noël (Foncé, comme un ciel étoilé ou un fond velours) */
-            --bg-body: #0a0a0a; /* Noir profond */
-            --bg-container: #1b1b1b; /* Gris très foncé */
-            --text-primary: #f8f9fa; /* Blanc neige */
-            --text-secondary: #ced4da; /* Gris clair */
-            
-            /* Accents de Noël */
-            --cv-primary-color: #CD5C5C; /* Indian Red / Rouge de Noël plus pâle */
-            --cv-accent-color: #006400; /* Dark Green / Vert Sapin Profond */
-        }
-        
-        /* --- APPLICATION DES VARIABLES AUX ÉLÉMENTS --- */
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            background-color: var(--bg-body); 
-            color: var(--text-primary);
-        }
-
-        .cv-container {
-            max-width: 950px; 
-            background-color: var(--bg-container) !important;
-        }
-
-        /* Style pour la ligne de séparation sous les titres de section */
-        .section-title {
-            color: var(--cv-primary-color);
-            font-weight: 700;
-            padding-bottom: 5px;
-            border-bottom: 3px solid var(--cv-primary-color);
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        /* En-tête (Nom et Titre) */
-        .cv-header {
-            background-color: var(--cv-accent-color);
-            color: white; 
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            transition: background-color 0.3s ease-in-out;
-        }
-        /* Effet de pulsation au survol sur l'en-tête (utilise la couleur primaire) */
-        .cv-header:hover {
-            box-shadow: 0 0 15px 3px var(--cv-primary-color);
-        }
-
-        /* Texte et liens dans l'en-tête */
-        .cv-header h1, .cv-header p, .cv-header strong {
-            color: white !important;
-        }
-        .cv-header a {
-             color: #f8f9fa !important; 
-        }
-
-        /* Style spécifique pour les titres de timeline */
-        .timeline-item {
-            border-left: 3px solid var(--cv-primary-color);
-            padding-left: 20px;
-            margin-left: 10px;
-            margin-bottom: 25px;
-        }
-        
-        /* Ajustements de couleur du texte via classes Bootstrap */
-        .text-dark {
-            color: var(--text-primary) !important; 
-        }
-        .text-secondary {
-            color: var(--text-secondary) !important; 
-        }
-        .badge {
-            background-color: var(--cv-primary-color) !important;
-            color: #f8f9fa !important;
-            font-weight: 600;
-            transition: transform 0.2s ease-in-out;
-        }
-        /* Effet de pulsation au survol sur les badges */
-        .badge:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 5px 1px var(--cv-primary-color);
-        }
-        
-        /* Tous les liens sont en couleur primaire et cliquables */
-        a:not(.badge) {
-             color: var(--cv-primary-color) !important; 
-        }
-
-        /* Style spécifique pour le bouton toggle */
-        #theme-toggle {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 0.8rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        #theme-toggle svg {
-            width: 1rem;
-            height: 1rem;
-            margin-right: 0.25rem;
-        }
-        
-        /* CORRECTION POUR LES TITRES DE LANGUES/INTÉRÊTS */
-        .text-custom-primary {
-            color: var(--text-primary) !important;
-        }
-
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="christmas">
 
     <div class="cv-container shadow-lg rounded-3 overflow-hidden mx-auto">
-
         <header class="cv-header">
-            
-            <button id="theme-toggle" class="btn btn-sm btn-light">
-                </button>
+            <button id="theme-toggle" class="btn btn-sm btn-light"></button>
 
             <h1 class="display-5 fw-bold mb-1">LÉO CANOVA-PRÉVÔT</h1>
             <p class="lead fw-light opacity-80 mb-3">Futur Technicien Cybersécurité | Réseaux et Développement Web</p>
             
             <div class="d-flex justify-content-center flex-wrap gap-4 small">
-                <span class="text-white">
-                    <strong class="text-white">📞 Téléphone:</strong> 07 44 82 60 08
-                </span>
-                <span class="text-white">
-                    <strong class="text-white">📧 Email:</strong> <a href="mailto:coursdeleo@gmail.com" class="text-decoration-none fw-bold text-white">coursdeleo@gmail.com</a>
-                </span>
-                <span class="text-white">
-                    <strong class="text-white">📍 Adresse:</strong> Clermont-en-Argonne (55120), France
-                </span>
+                <span class="text-white"><strong class="text-white">📞 Téléphone:</strong> 07 44 82 60 08</span>
+                <span class="text-white"><strong class="text-white">📧 Email:</strong> <a href="mailto:coursdeleo@gmail.com" class="text-decoration-none fw-bold text-white">coursdeleo@gmail.com</a></span>
+                <span class="text-white"><strong class="text-white">📍 Adresse:</strong> Clermont-en-Argonne (55120), France</span>
             </div>
         </header>
 
         <main class="p-4 p-md-5">
-
             <section class="mb-5">
                 <h2 class="section-title fs-4">PROFIL</h2>
                 <p class="text-secondary">
                     Étudiant en <strong>1ère année de BTS CIEL option Informatique et Réseaux</strong>, je recherche activement un <strong>stage de 2 mois</strong> du <strong>11 mai au 4 juillet</strong> afin d'appliquer et de développer mes compétences en sécurité des systèmes d'information. 
                     Je suis <strong>Autiste Asperger</strong>, ce qui se traduit par une <strong>attention exceptionnelle aux détails, une grande capacité de concentration et une approche méthodique</strong> des problèmes techniques.
-                    Passionné par les infrastructures réseaux et Linux, je suis motivé à contribuer activement à la sécurisation des environnements informatiques.
-                </p>
-                <p class="text-secondary small mt-3">
-                    À terme, mon objectif est de me spécialiser en <strong>Blue Team (défense)</strong> et d'approfondir mes connaissances en sécurité des architectures cloud (AWS / Azure).
                 </p>
             </section>
 
@@ -191,180 +51,60 @@
             </section>
 
             <div class="row">
-
                 <div class="col-md-6 pb-4">
-                    
                     <section class="mb-5">
                         <h2 class="section-title fs-4">FORMATION</h2>
-
                         <div class="timeline-item">
-                            <h3 class="h5 card-title text-dark">BTS Cybersécurité, Informatique et Réseaux, Électronique option A : Informatique et Réseaux (CIEL IR)</h3>
-                            <p class="card-subtitle text-secondary fw-medium mb-1">Lycée Raymond Poincaré de Bar-le-Duc | 1ère Année (En cours)</p>
+                            <h3 class="h5 card-title text-dark">BTS CIEL option A : Informatique et Réseaux</h3>
+                            <p class="card-subtitle text-secondary fw-medium mb-1">Lycée Raymond Poincaré de Bar-le-Duc | 1ère Année</p>
                             <ul class="text-secondary ps-3 mt-2">
-                                <li>Étude approfondie des concepts de <strong>cybersécurité</strong>, administration réseau, et systèmes d'exploitation (Linux).</li>
-                                <li>Maitrise des protocoles de communication et des bases du développement web.</li>
+                                <li>Cybersécurité, administration réseau, et systèmes Linux.</li>
                             </ul>
                         </div>
-                        
                         <div class="timeline-item">
-                            <h3 class="h5 card-title text-dark">Baccalauréat STI2D option SIN (Systèmes d'Information et Numérique)</h3>
-                            <p class="card-subtitle text-secondary fw-medium mb-1">Lycée Raymond Poincaré | Obtenu en 2025</p>
+                            <h3 class="h5 card-title text-dark">Baccalauréat STI2D option SIN</h3>
+                            <p class="card-subtitle text-secondary fw-medium mb-1">Obtenu en 2025</p>
                         </div>
                     </section>
-
-                    <section class="mb-5">
-                        <h2 class="section-title fs-4">PROJETS CLÉS</h2>
-
-                        <div class="timeline-item">
-                            <h3 class="h5 card-title text-dark">Site Web "Nao" (Projet TP)</h3>
-                            <p class="card-subtitle text-secondary fw-medium mb-2">Technologies: HTML5, CSS3, JavaScript</p>
-                            <ul class="text-secondary ps-3 mt-2">
-                                <li>Conception et structuration complète d'un site à l'aide de balises sémantiques.</li>
-                                <li>Développement de la mise en page et du style via une feuille de style externe (gestion des unités et modèles de boîtes).</li>
-                                <li>Intégration de scripts <strong>JavaScript</strong> pour gérer l'interaction utilisateur et les événements dynamiques.</li>
-                                <li><strong>Lien public du projet : <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank">site-nao-final-m2fd.vercel.app</a></strong></li>
-                                <li><strong>Code source : <a href="https://github.com/JusteUnMecGach4a/Site-NAO-final" target="_blank">JusteUnMecGach4a/Site-NAO-final</a></strong></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <h3 class="h5 card-title text-dark">Site Web sur les Jeux Vidéo d'Horreur</h3>
-                            <p class="card-subtitle text-secondary fw-medium mb-2">Technologies: HTML5, CSS3, JavaScript</p>
-                            <ul class="text-secondary ps-3 mt-2">
-                                <li><strong>Réalisé suite à une demande d'un surveillant du lycée.</strong></li>
-                                <li>Projet personnel de développement web axé sur un thème précis (horreur).</li>
-                                <li>Application des connaissances en structuration de contenu et en style pour une interface thématique.</li>
-                                <li>Déploiement du site en ligne (Vercel) et gestion du versionnement (GitHub).</li>
-                                <li><strong>Lien public du projet : <a href="https://jv-horreur.vercel.app/" target="_blank">jv-horreur.vercel.app</a></strong></li>
-                                <li><strong>Code source : <a href="https://github.com/JusteUnMecGach4a/JV-horreur" target="_blank">JusteUnMecGach4a/JV-horreur</a></strong></li>
-                            </ul>
-                        </div>
-                    </section>
-
                 </div>
 
-                <div class="col-md-6 pt-4 pt-md-0 ps-md-4">
-                    
+                <div class="col-md-6 ps-md-4">
                     <section class="mb-5">
                         <h2 class="section-title fs-4">LANGUES</h2>
-                        <p class="text-secondary mb-1">
-                            <span class="fw-bold text-custom-primary">Français:</span> Langue maternelle
-                        </p>
-                        <p class="text-secondary mb-0">
-                            <span class="fw-bold text-custom-primary">Anglais</span>
-                        </p>
+                        <p class="text-secondary"><span class="fw-bold text-custom-primary">Français:</span> Maternel</p>
+                        <p class="text-secondary"><span class="fw-bold text-custom-primary">Anglais:</span> Technique</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="section-title fs-4">CENTRES D'INTÉRÊT</h2>
-                        <p class="text-secondary">
-                            <strong class="text-custom-primary">Jeux Vidéo :</strong> (Analyse de l'architecture des systèmes et la performance)
-                        </p>
+                        <p class="text-secondary"><strong class="text-custom-primary">Jeux Vidéo :</strong> Analyse d'architecture et performance.</p>
                     </section>
-
-                    <section class="d-none d-md-block">
-                        <h2 class="section-title fs-4" style="visibility: hidden;">_</h2>
-                    </section>
-
                 </div>
-
             </div>
-
         </main>
-
     </div>
 
-    <div id="message-box" class="fixed-top mt-3 me-3 p-3 rounded-3 shadow-lg" style="width: 300px; z-index: 1000; opacity: 0; transition: opacity 0.3s, visibility 0.3s, background-color 0.3s; visibility: hidden;"></div>
     <script>
-        /**
-         * Empêche l'utilisation de window.alert() et affiche un message personnalisé à la place.
-         */
-        window.alert = function(message) {
-            console.warn("Utilisation de window.alert() bloquée. Affichez le message via l'UI.");
-            const messageBox = document.getElementById('message-box');
-            
-            // Configuration du message d'erreur
-            messageBox.textContent = "Erreur (Alerte bloquée): " + message;
-            messageBox.style.backgroundColor = '#dc3545'; /* Rouge Bootstrap */
-            
-            // Affichage du message
-            messageBox.style.opacity = '1';
-            messageBox.style.visibility = 'visible';
-
-            // Masquage après 4 secondes
-            setTimeout(() => {
-                messageBox.style.opacity = '0';
-                messageBox.style.visibility = 'hidden';
-            }, 4000);
-        };
-
-        // --- LOGIQUE DE CHANGEMENT DE THÈME ---
         const body = document.body;
         const themeToggleBtn = document.getElementById('theme-toggle');
-
-        // SVG pour les icônes (Soleil pour Clair, Étoile pour Noël)
         const sunIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-.06L15.47 7.72a.75.75 0 001.06 1.06l2.364-2.364a.75.75 0 00-.06-1.06zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18a.75.75 0 01.75-.75zM6.106 18.894a.75.75 0 00-.06 1.06l2.364 2.364a.75.75 0 001.06-1.06L7.166 17.834a.75.75 0 00-1.06.06zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 001.06-.06l2.364-2.364a.75.75 0 00-1.06-1.06L5.106 4.046a.75.75 0 00.06 1.06z"/></svg>`;
         const starIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>`;
 
-        // Tableau des thèmes (seulement Noël et Clair)
         const themes = ['christmas', 'light'];
-
-        function getNextTheme(currentTheme) {
-            const currentIndex = themes.indexOf(currentTheme);
-            // Cycle: christmas (0) -> light (1) -> christmas (0)
-            const nextIndex = (currentIndex + 1) % themes.length;
-            return themes[nextIndex];
-        }
-
-        // Détermine l'icône et le texte pour le thème SUIVANT
-        function getThemeTextAndIcon(nextTheme) {
-            switch(nextTheme) {
-                case 'light': return sunIcon + " Clair";
-                case 'christmas': return starIcon + " Noël";
-                default: return sunIcon + " Clair";
-            }
-        }
-        
-        // Détermine la classe du bouton pour le thème ACTUEL (pour le contraste avec l'en-tête)
-        function getThemeButtonClass(currentTheme) {
-             // 'christmas' (en-tête vert foncé) ou 'light' (en-tête turquoise foncé) ont besoin de btn-light
-            return 'btn-light'; 
-        }
 
         function setTheme(theme) {
             body.setAttribute('data-theme', theme);
-            
-            // On enregistre la préférence
             localStorage.setItem('theme', theme);
-
-            const nextTheme = getNextTheme(theme);
-            
-            // Mise à jour de l'apparence du bouton
-            themeToggleBtn.innerHTML = getThemeTextAndIcon(nextTheme);
-            themeToggleBtn.className = `btn btn-sm ${getThemeButtonClass(theme)}`;
+            const nextTheme = theme === 'christmas' ? 'light' : 'christmas';
+            themeToggleBtn.innerHTML = nextTheme === 'light' ? sunIcon + " Clair" : starIcon + " Noël";
         }
 
-        // Gestion du clic sur le bouton: passe au thème suivant
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = body.getAttribute('data-theme');
-            const newTheme = getNextTheme(currentTheme);
-            setTheme(newTheme);
+            setTheme(currentTheme === 'christmas' ? 'light' : 'christmas');
         });
 
-        // 1. Détection initiale: Préfère la sauvegarde locale, sinon le thème de Noël par défaut
-        const savedTheme = localStorage.getItem('theme');
-        let initialTheme;
-
-        if (savedTheme && themes.includes(savedTheme)) {
-            initialTheme = savedTheme;
-        } else {
-            // Si aucune préférence utilisateur, démarre par défaut en thème de Noël
-            initialTheme = 'christmas'; 
-        }
-        
-        // Applique le thème initial
-        setTheme(initialTheme);
-        
+        setTheme(localStorage.getItem('theme') || 'christmas');
     </script>
 </body>
 </html>
