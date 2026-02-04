@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Léo Canova-Prévot</title>
+    
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF4D6D'><path d='M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z' /></svg>">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="valentines">
-    <div class="cv-container shadow-lg rounded-3 overflow-hidden mx-auto">
+
+    <div class="cv-container shadow-lg rounded-3 overflow-hidden mx-auto my-4">
+        
         <header class="cv-header">
             <button id="theme-toggle" class="btn btn-sm btn-light"></button>
+
             <h1 class="display-5 fw-bold mb-1">LÉO CANOVA-PRÉVÔT</h1>
             <p class="lead fw-light opacity-80 mb-3">Futur Technicien Cybersécurité | Réseaux et Développement Web</p>
+            
             <div class="d-flex justify-content-center flex-wrap gap-4 small">
                 <span><strong>📞 Téléphone:</strong> 07 44 82 60 08</span>
                 <span><strong>📧 Email:</strong> <a href="mailto:coursdeleo@gmail.com" class="text-decoration-none fw-bold">coursdeleo@gmail.com</a></span>
@@ -26,36 +32,47 @@
             <section class="mb-5">
                 <h2 class="section-title fs-4">PROFIL</h2>
                 <p class="text-secondary">
-                    Étudiant en <strong>1ère année de BTS CIEL option Informatique et Réseaux</strong>, je recherche un <strong>stage de 2 mois</strong> du <strong>11 mai au 4 juillet 2026</strong>. 
+                    Étudiant en <strong>1ère année de BTS CIEL option Informatique et Réseaux</strong>, je recherche activement un <strong>stage de 2 mois</strong> du 11 mai au 4 juillet 2026.
                     Mon profil d'<strong>Autiste Asperger</strong> m'apporte une attention exceptionnelle aux détails et une approche méthodique indispensable en cybersécurité.
                 </p>
             </section>
 
+            <section class="mb-5">
+                <h2 class="section-title fs-4">COMPÉTENCES TECHNIQUES</h2>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge">Sécurité (Kali Linux)</span>
+                    <span class="badge">Réseaux (Cisco, TCP/IP)</span>
+                    <span class="badge">Systèmes (Linux/Windows)</span>
+                    <span class="badge">Développement (HTML5/CSS3/JS)</span>
+                    <span class="badge">Virtualisation (VMware)</span>
+                </div>
+            </section>
+
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 pb-4">
                     <section class="mb-5">
                         <h2 class="section-title fs-4">FORMATION</h2>
                         <div class="timeline-item">
                             <h3 class="h5 text-dark">BTS CIEL (IR)</h3>
-                            <p class="text-secondary mb-1">Lycée Raymond Poincaré de Bar-le-Duc | En cours</p>
+                            <p class="text-secondary mb-1">Lycée Raymond Poincaré | En cours</p>
                         </div>
                         <div class="timeline-item">
-                            <h3 class="h5 text-dark">Baccalauréat STI2D option SIN</h3>
-                            <p class="text-secondary">Obtenu en 2025 | Lycée Raymond Poincaré</p>
+                            <h3 class="h5 text-dark">Baccalauréat STI2D</h3>
+                            <p class="text-secondary mb-1">Obtenu en 2025</p>
                         </div>
                     </section>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 ps-md-4">
                     <section class="mb-5">
-                        <h2 class="section-title fs-4">PROJETS CLÉS</h2>
+                        <h2 class="section-title fs-4">PROJETS</h2>
                         <div class="timeline-item">
                             <h3 class="h5 text-dark">Site Web "Nao"</h3>
-                            <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank" class="small text-decoration-none">Voir le déploiement →</a>
+                            <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank" class="small text-decoration-none">Voir le site →</a>
                         </div>
                         <div class="timeline-item">
                             <h3 class="h5 text-dark">Jeux Vidéo d'Horreur</h3>
-                            <a href="https://jv-horreur.vercel.app/" target="_blank" class="small text-decoration-none">Voir le déploiement →</a>
+                            <a href="https://jv-horreur.vercel.app/" target="_blank" class="small text-decoration-none">Voir le site →</a>
                         </div>
                     </section>
                 </div>
@@ -66,22 +83,32 @@
     <script>
         const body = document.body;
         const themeToggleBtn = document.getElementById('theme-toggle');
-        const sunIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-.06L15.47 7.72a.75.75 0 001.06 1.06l2.364-2.364a.75.75 0 00-.06-1.06zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18a.75.75 0 01.75-.75zM6.106 18.894a.75.75 0 00-.06 1.06l2.364-2.364a.75.75 0 001.06-1.06L7.166 17.834a.75.75 0 00-1.06.06zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 001.06-.06l2.364-2.364a.75.75 0 00-1.06-1.06L5.106 4.046a.75.75 0 00.06 1.06z"/></svg>`;
-        const heartIcon = `<svg class="h-4 w-4 me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" /></svg>`;
+
+        const sunIcon = `<svg style="width:16px;height:16px;margin-right:5px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-.06L15.47 7.72a.75.75 0 001.06 1.06l2.364-2.364a.75.75 0 00-.06-1.06zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18a.75.75 0 01.75-.75zM6.106 18.894a.75.75 0 00-.06 1.06l2.364-2.364a.75.75 0 001.06-1.06L7.166 17.834a.75.75 0 00-1.06.06zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 001.06-.06l2.364-2.364a.75.75 0 00-1.06-1.06L5.106 4.046a.75.75 0 00.06 1.06z"/></svg>`;
+        const heartIcon = `<svg style="width:16px;height:16px;margin-right:5px" viewBox="0 0 24 24" fill="currentColor"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" /></svg>`;
+
+        function updateButton(currentTheme) {
+            if (currentTheme === 'valentines') {
+                themeToggleBtn.innerHTML = sunIcon + " Clair";
+            } else {
+                themeToggleBtn.innerHTML = heartIcon + " Valentin";
+            }
+        }
 
         function setTheme(theme) {
             body.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
-            const nextTheme = theme === 'valentines' ? 'light' : 'valentines';
-            themeToggleBtn.innerHTML = nextTheme === 'light' ? sunIcon + " Clair" : heartIcon + " Valentin";
+            updateButton(theme);
         }
 
         themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
-            setTheme(currentTheme === 'valentines' ? 'light' : 'valentines');
+            const newTheme = body.getAttribute('data-theme') === 'valentines' ? 'light' : 'valentines';
+            setTheme(newTheme);
         });
 
-        setTheme(localStorage.getItem('theme') || 'valentines');
+        // Initialisation
+        const savedTheme = localStorage.getItem('theme') || 'valentines';
+        setTheme(savedTheme);
     </script>
 </body>
 </html>
