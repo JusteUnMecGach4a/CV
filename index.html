@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Léo Canova-Prévot</title>
+    <title>CV - Léo Canova-Prévôt</title>
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF4D6D'><path d='M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z' /></svg>">
     
@@ -44,7 +44,8 @@
                     <span class="badge">Réseaux (Cisco, TCP/IP)</span>
                     <span class="badge">Systèmes (Linux/Windows)</span>
                     <span class="badge">Développement (HTML5/CSS3/JS)</span>
-                    <span class="badge">Virtualisation (VMware)</span>
+                    <span class="badge">IA Générative</span>
+                    <span class="badge">Virtualisation</span>
                 </div>
             </section>
 
@@ -65,14 +66,11 @@
 
                 <div class="col-md-6 ps-md-4">
                     <section class="mb-5">
-                        <h2 class="section-title fs-4">PROJETS</h2>
+                        <h2 class="section-title fs-4">PROJET PHARE</h2>
                         <div class="timeline-item">
                             <h3 class="h5 text-dark">Site Web "Nao"</h3>
-                            <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank" class="small text-decoration-none">Voir le site →</a>
-                        </div>
-                        <div class="timeline-item">
-                            <h3 class="h5 text-dark">Jeux Vidéo d'Horreur</h3>
-                            <a href="https://jv-horreur.vercel.app/" target="_blank" class="small text-decoration-none">Voir le site →</a>
+                            <p class="text-secondary small mb-2">Conception d'un site web dynamique avec intégration de scripts JS.</p>
+                            <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank" class="small text-decoration-none">Consulter le projet →</a>
                         </div>
                     </section>
                 </div>
@@ -84,8 +82,23 @@
         const body = document.body;
         const themeToggleBtn = document.getElementById('theme-toggle');
 
-        const sunIcon = `<svg style="width:16px;height:16px;margin-right:5px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-.06L15.47 7.72a.75.75 0 001.06 1.06l2.364-2.364a.75.75 0 00-.06-1.06zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18a.75.75 0 01.75-.75zM6.106 18.894a.75.75 0 00-.06 1.06l2.364-2.364a.75.75 0 001.06-1.06L7.166 17.834a.75.75 0 00-1.06.06zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 001.06-.06l2.364-2.364a.75.75 0 00-1.06-1.06L5.106 4.046a.75.75 0 00.06 1.06z"/></svg>`;
-        const heartIcon = `<svg style="width:16px;height:16px;margin-right:5px" viewBox="0 0 24 24" fill="currentColor"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" /></svg>`;
+        const sunIcon = `
+            <svg style="width:18px;height:18px;margin-right:6px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>`;
+
+        const heartIcon = `
+            <svg style="width:16px;height:16px;margin-right:6px" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+            </svg>`;
 
         function updateButton(currentTheme) {
             if (currentTheme === 'valentines') {
@@ -106,7 +119,6 @@
             setTheme(newTheme);
         });
 
-        // Initialisation
         const savedTheme = localStorage.getItem('theme') || 'valentines';
         setTheme(savedTheme);
     </script>
