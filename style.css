@@ -1,22 +1,24 @@
 /* --- VARIABLES DE THÈME --- */
 :root {
-    /* Thème Professionnel (Léo Turquoise) */
+    /* Thème Professionnel (Léo Turquoise) - Inchangé */
     --bg-body: #f1f3f5;
     --bg-container: #ffffff;
     --text-primary: #212529;
     --text-secondary: #6c757d;
-    --cv-primary-color: #1ABC9C; /* Bleu Turquoise */
+    --cv-primary-color: #1ABC9C; 
     --cv-accent-color: #117A65;
 }
 
-[data-theme="christmas"] {
-    /* Thème Noël Foncé */
-    --bg-body: #0a0a0a;
-    --bg-container: #1b1b1b;
-    --text-primary: #f8f9fa;
-    --text-secondary: #ced4da;
-    --cv-primary-color: #CD5C5C; /* Rouge Noël */
-    --cv-accent-color: #006400; /* Vert Sapin */
+/* Nouveau Thème Saint-Valentin */
+[data-theme="valentines"] {
+    --bg-body: #fff0f3; /* Rose très pâle pour le fond */
+    --bg-container: #ffffff; /* Conteneur reste blanc pour la lisibilité */
+    --text-primary: #5e0b15; /* Marron/Rouge très foncé pour le texte */
+    --text-secondary: #a4161a; /* Rouge bordeaux pour le texte secondaire */
+    
+    /* Accents Saint-Valentin */
+    --cv-primary-color: #ff4d6d; /* Rose vif / Rouge cerise */
+    --cv-accent-color: #800f2f;   /* Bordeaux profond pour l'en-tête */
 }
 
 /* --- STYLES GÉNÉRAUX --- */
@@ -25,13 +27,13 @@ body {
     padding: 20px 0;
     background-color: var(--bg-body);
     color: var(--text-primary);
-    transition: background-color 0.3s ease;
+    transition: all 0.5s ease; /* Transition plus douce pour le changement de thème */
 }
 
 .cv-container {
     max-width: 950px;
     background-color: var(--bg-container) !important;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
 }
 
 /* --- SECTIONS ET TITRES --- */
@@ -49,14 +51,15 @@ body {
     padding: 2rem;
     text-align: center;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .cv-header:hover {
-    box-shadow: 0 0 15px 3px var(--cv-primary-color);
+    /* Effet lumineux aux couleurs de la St Valentin */
+    box-shadow: 0 0 20px 5px rgba(255, 77, 109, 0.4);
 }
 
-.cv-header a { color: #f8f9fa !important; }
+.cv-header a { color: #ffe5ec !important; }
 
 /* --- ÉLÉMENTS DE DESIGN --- */
 .timeline-item {
@@ -68,13 +71,15 @@ body {
 
 .badge {
     background-color: var(--cv-primary-color) !important;
-    color: #f8f9fa !important;
+    color: white !important;
     padding: 0.5em 1em;
-    transition: transform 0.2s;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .badge:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* --- BOUTON TOGGLE --- */
@@ -86,7 +91,7 @@ body {
     z-index: 10;
 }
 
-/* Corrections couleurs Bootstrap héritées */
+/* Corrections couleurs Bootstrap */
 .text-dark { color: var(--text-primary) !important; }
 .text-secondary { color: var(--text-secondary) !important; }
 .text-custom-primary { color: var(--text-primary) !important; }
