@@ -86,6 +86,34 @@
         const sunIcon = `<svg style="width:18px;height:18px;margin-right:6px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
         const moonIcon = `<svg style="width:16px;height:16px;margin-right:6px" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>`;
 
+        // Configuration des dates des fêtes (Mois est 0-indexé)
+        const HOLIDAYS = [
+            { name: 'valentine', month: 1, day: 14, range: 7 },
+            { name: 'labor-day', month: 4, day: 1, range: 7 },
+            { name: 'national-day', month: 4, day: 8, range: 3 }, // 8 Mai
+            { name: 'national-day', month: 6, day: 14, range: 7 }, // 14 Juillet
+            { name: 'halloween', month: 9, day: 31, range: 7 },
+            { name: 'national-day', month: 10, day: 11, range: 3 }, // 11 Nov
+            { name: 'christmas', month: 11, day: 25, range: 15 }
+        ];
+
+        function getActiveHoliday() {
+            const now = new Date();
+            const currentMonth = now.getMonth();
+            const currentDay = now.getDate();
+
+            for (const holiday of HOLIDAYS) {
+                const holidayDate = new Date(now.getFullYear(), holiday.month, holiday.day);
+                const diffTime = holidayDate - now;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+                // Si on est le jour même ou dans la période "à l'approche"
+                if (currentMonth === holiday.month && currentDay === holiday.day) return holiday.name;
+                if (diffDays > 0 && diffDays <= holiday.range) return holiday.name;
+            }
+            return 'neutral';
+        }
+
         function updateButton(currentTheme) {
             if (currentTheme === 'dark') {
                 themeToggleBtn.innerHTML = sunIcon + " Clair";
@@ -100,13 +128,21 @@
             updateButton(theme);
         }
 
+        function initHoliday() {
+            const holiday = getActiveHoliday();
+            body.setAttribute('data-holiday', holiday);
+            console.log("Holiday theme active:", holiday);
+        }
+
         themeToggleBtn.addEventListener('click', () => {
             const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             setTheme(newTheme);
         });
 
+        // Initialisation
         const savedTheme = localStorage.getItem('cv-theme') || 'dark';
         setTheme(savedTheme);
+        initHoliday();
     </script>
 </body>
 </html>

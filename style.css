@@ -1,6 +1,19 @@
-/* --- VARIABLES DE THÈME --- */
+/* --- SYSTÈME DE THÈMES --- */
 :root {
-    /* Thème Sombre Fête du Travail (Défaut) */
+    /* Défaut (Neutre / Professionnel) */
+    --bg-body: #f8f9fa;
+    --bg-container: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --cv-primary-color: #0056b3;
+    --cv-accent-color: #e9ecef;
+    --item-title: #212529;
+}
+
+/* --- THÈMES PAR FÊTE --- */
+
+/* Fête du Travail (Vert/Blanc) */
+[data-holiday="labor-day"] {
     --bg-body: #081c15;
     --bg-container: #1b4332;
     --text-primary: #d8f3dc;
@@ -9,9 +22,7 @@
     --cv-accent-color: #081c15;
     --item-title: #ffffff;
 }
-
-/* Thème Clair Fête du Travail */
-[data-theme="light"] {
+[data-holiday="labor-day"][data-theme="light"] {
     --bg-body: #f8f9fa;
     --bg-container: #ffffff;
     --text-primary: #081c15;
@@ -19,6 +30,59 @@
     --cv-primary-color: #2d6a4f;
     --cv-accent-color: #40916c;
     --item-title: #081c15;
+}
+
+/* Saint-Valentin (Rose/Rouge) */
+[data-holiday="valentine"] {
+    --bg-body: #1a0508;
+    --bg-container: #2d0a0e;
+    --text-primary: #ffb3c1;
+    --text-secondary: #ff8fa3;
+    --cv-primary-color: #ff4d6d;
+    --cv-accent-color: #590d22;
+    --item-title: #ffffff;
+}
+[data-holiday="valentine"][data-theme="light"] {
+    --bg-body: #fff0f3;
+    --bg-container: #ffffff;
+    --text-primary: #5e0b15;
+    --text-secondary: #a4161a;
+    --cv-primary-color: #ff4d6d;
+    --cv-accent-color: #800f2f;
+    --item-title: #1a0508;
+}
+
+/* Noël (Rouge/Vert/Or) */
+[data-holiday="christmas"] {
+    --bg-body: #0a1f12;
+    --bg-container: #1a3c26;
+    --text-primary: #f8f9fa;
+    --text-secondary: #d4af37;
+    --cv-primary-color: #c41e3a;
+    --cv-accent-color: #05140b;
+    --item-title: #ffffff;
+}
+
+/* Fête Nationale / Victoire (Bleu/Blanc/Rouge) */
+[data-holiday="national-day"] {
+    --bg-body: #001233;
+    --bg-container: #001845;
+    --text-primary: #ffffff;
+    --text-secondary: #adb5bd;
+    --cv-primary-color: #00509d;
+    --cv-accent-color: #780000;
+    --item-title: #ffffff;
+}
+
+/* Halloween (Orange/Noir) */
+[data-holiday="halloween"] {
+    --bg-body: #1a1a1a;
+    --bg-container: #262626;
+    --text-primary: #ff7518;
+    --text-secondary: #a6a6a6;
+    --cv-primary-color: #ff7518;
+    --cv-accent-color: #000000;
+    --item-title: #ffffff;
 }
 
 /* --- STYLES GÉNÉRAUX --- */
