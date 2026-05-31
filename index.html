@@ -20,7 +20,34 @@
     <div class="cv-container shadow-lg mx-auto my-0 my-md-5 overflow-hidden">
         
         <header class="cv-header">
-            <button id="theme-toggle" class="btn btn-sm"></button>
+            <div class="header-controls d-print-none">
+                <select id="holiday-theme-select" class="form-select form-select-sm" aria-label="Choisir le thème saisonnier">
+                    <option value="auto">🌟 Automatique (Saisonnier)</option>
+                    <option value="neutral">💼 Neutre / Professionnel</option>
+                    <option value="new-year">✨ Nouvel An</option>
+                    <option value="valentine">❤️ Saint-Valentin</option>
+                    <option value="grandmothers-day">💜 Fête des Grands-Mères</option>
+                    <option value="st-patrick">🍀 Saint-Patrick</option>
+                    <option value="spring">🌸 Printemps</option>
+                    <option value="easter">🐣 Pâques</option>
+                    <option value="earth-day">🌍 Jour de la Terre</option>
+                    <option value="labor-day">🌸 Fête du Travail</option>
+                    <option value="mothers-day">❤️ Fête des Mères</option>
+                    <option value="fathers-day">👔 Fête des Pères</option>
+                    <option value="pride-month">🌈 Mois des Fiertés</option>
+                    <option value="summer">☀️ Bel Été</option>
+                    <option value="music-day">🎵 Fête de la Musique</option>
+                    <option value="cinema-day">🎬 Fête du Cinéma</option>
+                    <option value="national-day">🇫🇷 Fête Nationale</option>
+                    <option value="back-to-school">🎒 Rentrée Scolaire</option>
+                    <option value="programmer-day">💻 Développeurs</option>
+                    <option value="halloween">🎃 Halloween</option>
+                    <option value="armistice">🕊️ Armistice</option>
+                    <option value="autumn">🍁 Automne</option>
+                    <option value="christmas">🎄 Noël</option>
+                </select>
+                <button id="theme-toggle" class="btn btn-sm"></button>
+            </div>
 
             <div class="reveal">
                 <h1 class="display-4 fw-800 mb-2">LÉO CANOVA-PRÉVOT</h1>
@@ -229,14 +256,23 @@
             return 'neutral';
         }
 
-        function initHoliday() {
-            const holiday = getActiveHoliday();
-            body.setAttribute('data-holiday', holiday);
+        const holidayThemeSelect = document.getElementById('holiday-theme-select');
+
+        function updateHolidayTheme() {
+            let selected = localStorage.getItem('cv-holiday-theme') || 'auto';
+            holidayThemeSelect.value = selected;
+
+            let activeHoliday = selected;
+            if (selected === 'auto') {
+                activeHoliday = getActiveHoliday();
+            }
+
+            body.setAttribute('data-holiday', activeHoliday);
             
             const banner = document.querySelector('.holiday-banner');
             if (banner) {
-                if (holiday !== 'neutral' && HOLIDAY_METADATA[holiday]) {
-                    const data = HOLIDAY_METADATA[holiday];
+                if (activeHoliday !== 'neutral' && HOLIDAY_METADATA[activeHoliday]) {
+                    const data = HOLIDAY_METADATA[activeHoliday];
                     const animClass = data.animate || '';
                     banner.innerHTML = `
                         <span class="badge text-white px-3 py-2 rounded-pill shadow-sm" style="font-size: 0.9rem; border: none; background: ${data.color} !important;">
@@ -249,6 +285,11 @@
                 }
             }
         }
+
+        holidayThemeSelect.addEventListener('change', (e) => {
+            localStorage.setItem('cv-holiday-theme', e.target.value);
+            updateHolidayTheme();
+        });
 
         function updateButton(currentTheme) {
             const icon = currentTheme === 'dark' ? '<i class="bi bi-sun-fill me-2"></i> Clair' : '<i class="bi bi-moon-stars-fill me-2"></i> Sombre';
@@ -281,7 +322,7 @@
         // Initialisation
         const savedTheme = localStorage.getItem('cv-theme') || 'dark';
         setTheme(savedTheme);
-        initHoliday();
+        updateHolidayTheme();
     </script>
 </body>
 </html>
