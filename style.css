@@ -699,7 +699,7 @@ body {
     align-items: center;
 }
 
-#theme-toggle, #accessibility-btn {
+#theme-toggle {
     backdrop-filter: blur(12px) !important;
     background: rgba(255, 255, 255, 0.1) !important;
     border: 1px solid var(--glass-border) !important;
@@ -716,7 +716,18 @@ body {
 }
 
 #accessibility-btn {
+    background-color: #0066cc !important;
+    border: 2px solid #0056b3 !important;
+    color: #ffffff !important;
+    border-radius: 14px !important;
     padding: 0.6rem 1rem !important;
+    font-weight: 600 !important;
+    transition: var(--transition-smooth) !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3) !important;
 }
 
 #holiday-theme-select {
@@ -747,8 +758,7 @@ body {
     color: white;
 }
 
-[data-theme="light"] #theme-toggle,
-[data-theme="light"] #accessibility-btn {
+[data-theme="light"] #theme-toggle {
     color: var(--text-primary) !important;
     background: rgba(0, 0, 0, 0.05) !important;
     border-color: var(--glass-border) !important;
@@ -765,9 +775,7 @@ body {
     color: var(--text-primary);
 }
 
-#theme-toggle:hover, #accessibility-btn:hover,
-#theme-toggle:focus, #accessibility-btn:focus,
-#theme-toggle:active, #accessibility-btn:active {
+#theme-toggle:hover, #theme-toggle:focus, #theme-toggle:active {
     background: rgba(255, 255, 255, 0.2) !important;
     color: white !important;
     border-color: rgba(255, 255, 255, 0.4) !important;
@@ -775,9 +783,18 @@ body {
     box-shadow: none !important;
 }
 
-[data-theme="light"] #theme-toggle:hover, [data-theme="light"] #accessibility-btn:hover,
-[data-theme="light"] #theme-toggle:focus, [data-theme="light"] #accessibility-btn:focus,
-[data-theme="light"] #theme-toggle:active, [data-theme="light"] #accessibility-btn:active {
+#accessibility-btn:hover, #accessibility-btn:focus, #accessibility-btn:active {
+    background-color: #0052a3 !important;
+    border-color: #004080 !important;
+    color: #ffffff !important;
+    transform: scale(1.08) !important;
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.45) !important;
+    outline: none !important;
+}
+
+[data-theme="light"] #theme-toggle:hover,
+[data-theme="light"] #theme-toggle:focus,
+[data-theme="light"] #theme-toggle:active {
     background: rgba(0, 0, 0, 0.1) !important;
     color: var(--text-primary) !important;
     border-color: rgba(0, 0, 0, 0.15) !important;
