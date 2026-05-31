@@ -21,13 +21,23 @@ Le site applique automatiquement le thème de la **fête active la plus proche**
 Chaque fête redéfinit entièrement la palette de couleurs en **mode Clair** et en **mode Sombre** (variables CSS) et affiche une bannière animée dédiée dans le header :
 * **Nouvel An** : Tons Or & Indigo Nuit (`✨`)
 * **Saint-Valentin** : Tons Rose & Rouge Passion (`❤️` animée)
+* **Fête des Grands-Mères** : Tons Lavande & Violet (`💜` animée)
+* **Saint-Patrick** : Tons Trèfle Vert & Émeraude (`🍀`)
+* **Printemps** : Tons Blossom Pink & Vert Tendre (`🌸`)
 * **Pâques** : Tons Lime & Jaune Pastel (`🐣`)
+* **Jour de la Terre** : Tons Vert Botanique & Bleu Océan (`🌍`)
 * **Fête du Travail** : Tons Vert Muguet & Émeraude (`🌸`)
 * **Fête des Mères** : Tons Rose Poudré & Or Rose (`❤️` animée)
+* **Fête des Pères** : Tons Oxford & Bleu Denim (`👔`)
+* **Solstice d'Été (Bel Été)** : Tons Soleil Jaune & Sable (`☀️`)
 * **Fête de la Musique** : Synthwave Violet/Cyan (`🎵`)
+* **Fête du Cinéma** : Tons Tapis Rouge & Or (`🎬`)
 * **Fête Nationale** : Tons Patriotiques Bleu/Blanc/Rouge (`🇫🇷`)
+* **Rentrée Scolaire** : Tons Vert Tableau & Craie Jaune (`🎒`)
+* **Journée des Développeurs** : Tons Rétro Cyber Terminal Vert/Noir (`💻` animée)
 * **Halloween** : Tons Citrouille & Noir Sombre (`🎃`)
 * **Armistice** : Tons de Paix Bleuets & Gris (`🕊️`)
+* **Automne & Thanksgiving** : Tons Cuivrés & Ambrés (`🍁`)
 * **Noël** : Tons Magiques Rouge/Vert/Or (`🎄`)
 
 ### 2. Rendu PDF & Impression Haute Fidélité

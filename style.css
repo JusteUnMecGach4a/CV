@@ -377,6 +377,116 @@
     --glow-effect: none;
 }
 
+/* Fête des Grands-Mères (Lavender & Violet) */
+[data-holiday="grandmothers-day"][data-theme="dark"] {
+    --bg-body: #1e152a;
+    --bg-container: rgba(30, 21, 42, 0.7);
+    --glass-border: rgba(139, 92, 246, 0.15);
+    --text-primary: #f5f3ff;
+    --text-secondary: #ddd6fe;
+    --cv-primary-color: #a78bfa;
+    --cv-accent-color: #3b0764;
+    --glow-effect: 0 0 20px rgba(167, 139, 250, 0.2);
+}
+[data-holiday="grandmothers-day"][data-theme="light"] {
+    --bg-body: #faf5ff;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(139, 92, 246, 0.25);
+    --text-primary: #4c1d95;
+    --text-secondary: #6d28d9;
+    --cv-primary-color: #8b5cf6;
+    --cv-accent-color: #ede9fe;
+    --glow-effect: none;
+}
+
+/* Printemps (Blossom Pink & Mint) */
+[data-holiday="spring"][data-theme="dark"] {
+    --bg-body: #0f2d1e;
+    --bg-container: rgba(15, 45, 30, 0.7);
+    --glass-border: rgba(244, 114, 182, 0.15);
+    --text-primary: #fdf2f8;
+    --text-secondary: #fbcfe8;
+    --cv-primary-color: #f472b6;
+    --cv-accent-color: #064e3b;
+    --glow-effect: 0 0 20px rgba(244, 114, 182, 0.2);
+}
+[data-holiday="spring"][data-theme="light"] {
+    --bg-body: #fff5f7;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(244, 114, 182, 0.25);
+    --text-primary: #831843;
+    --text-secondary: #be185d;
+    --cv-primary-color: #ec4899;
+    --cv-accent-color: #fce7f3;
+    --glow-effect: none;
+}
+
+/* Jour de la Terre (Eco Green & Ocean) */
+[data-holiday="earth-day"][data-theme="dark"] {
+    --bg-body: #06251c;
+    --bg-container: rgba(6, 37, 28, 0.7);
+    --glass-border: rgba(34, 197, 94, 0.15);
+    --text-primary: #f0fdf4;
+    --text-secondary: #86efac;
+    --cv-primary-color: #22c55e;
+    --cv-accent-color: #0f172a;
+    --glow-effect: 0 0 20px rgba(34, 197, 94, 0.2);
+}
+[data-holiday="earth-day"][data-theme="light"] {
+    --bg-body: #f0fdf4;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(34, 197, 94, 0.25);
+    --text-primary: #14532d;
+    --text-secondary: #166534;
+    --cv-primary-color: #15803d;
+    --cv-accent-color: #dcfce7;
+    --glow-effect: none;
+}
+
+/* Été (Ocean Sky & Sun Yellow) */
+[data-holiday="summer"][data-theme="dark"] {
+    --bg-body: #073042;
+    --bg-container: rgba(7, 48, 66, 0.7);
+    --glass-border: rgba(234, 179, 8, 0.15);
+    --text-primary: #fef9c3;
+    --text-secondary: #fde047;
+    --cv-primary-color: #eab308;
+    --cv-accent-color: #083344;
+    --glow-effect: 0 0 25px rgba(234, 179, 8, 0.2);
+}
+[data-holiday="summer"][data-theme="light"] {
+    --bg-body: #fffbeb;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(234, 179, 8, 0.25);
+    --text-primary: #713f12;
+    --text-secondary: #a16207;
+    --cv-primary-color: #ca8a04;
+    --cv-accent-color: #fef9c3;
+    --glow-effect: none;
+}
+
+/* Programmer's Day (Retro Cyber Terminal) */
+[data-holiday="programmer-day"][data-theme="dark"] {
+    --bg-body: #050505;
+    --bg-container: rgba(10, 10, 10, 0.8);
+    --glass-border: rgba(34, 197, 94, 0.3);
+    --text-primary: #4ade80;
+    --text-secondary: #86efac;
+    --cv-primary-color: #22c55e;
+    --cv-accent-color: #052e16;
+    --glow-effect: 0 0 25px rgba(34, 197, 94, 0.4);
+}
+[data-holiday="programmer-day"][data-theme="light"] {
+    --bg-body: #f0fdf4;
+    --bg-container: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(22, 163, 74, 0.25);
+    --text-primary: #14532d;
+    --text-secondary: #15803d;
+    --cv-primary-color: #16a34a;
+    --cv-accent-color: #dcfce7;
+    --glow-effect: none;
+}
+
 /* --- BASE STYLES --- */
 body {
     font-family: var(--font-main);
