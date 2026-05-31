@@ -267,6 +267,116 @@
     animation: heartBeat 1.4s infinite ease-in-out;
 }
 
+/* Saint-Patrick (Vert Émeraude) */
+[data-holiday="st-patrick"][data-theme="dark"] {
+    --bg-body: #022c22;
+    --bg-container: rgba(4, 47, 31, 0.7);
+    --glass-border: rgba(16, 185, 129, 0.15);
+    --text-primary: #ecfdf5;
+    --text-secondary: #6ee7b7;
+    --cv-primary-color: #10b981;
+    --cv-accent-color: #064e3b;
+    --glow-effect: 0 0 25px rgba(16, 185, 129, 0.2);
+}
+[data-holiday="st-patrick"][data-theme="light"] {
+    --bg-body: #f0fdf4;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(16, 185, 129, 0.25);
+    --text-primary: #065f46;
+    --text-secondary: #047857;
+    --cv-primary-color: #059669;
+    --cv-accent-color: #d1fae5;
+    --glow-effect: none;
+}
+
+/* Fête des Pères (Bleu Denim) */
+[data-holiday="fathers-day"][data-theme="dark"] {
+    --bg-body: #0f172a;
+    --bg-container: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(56, 189, 248, 0.15);
+    --text-primary: #e2e8f0;
+    --text-secondary: #38bdf8;
+    --cv-primary-color: #0284c7;
+    --cv-accent-color: #172554;
+    --glow-effect: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+[data-holiday="fathers-day"][data-theme="light"] {
+    --bg-body: #f0f9ff;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(2, 132, 199, 0.2);
+    --text-primary: #0f172a;
+    --text-secondary: #0369a1;
+    --cv-primary-color: #0284c7;
+    --cv-accent-color: #e0f2fe;
+    --glow-effect: none;
+}
+
+/* Fête du Cinéma (Tapis Rouge & Or) */
+[data-holiday="cinema-day"][data-theme="dark"] {
+    --bg-body: #1c0d0d;
+    --bg-container: rgba(34, 13, 13, 0.7);
+    --glass-border: rgba(220, 38, 38, 0.15);
+    --text-primary: #fef2f2;
+    --text-secondary: #fbbf24;
+    --cv-primary-color: #ef4444;
+    --cv-accent-color: #450a0a;
+    --glow-effect: 0 0 25px rgba(239, 68, 68, 0.2);
+}
+[data-holiday="cinema-day"][data-theme="light"] {
+    --bg-body: #fef2f2;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(239, 68, 68, 0.25);
+    --text-primary: #7f1d1d;
+    --text-secondary: #b45309;
+    --cv-primary-color: #dc2626;
+    --cv-accent-color: #fef3c7;
+    --glow-effect: none;
+}
+
+/* Rentrée Scolaire (Vert Tableau & Craie) */
+[data-holiday="back-to-school"][data-theme="dark"] {
+    --bg-body: #062e24;
+    --bg-container: rgba(4, 47, 36, 0.7);
+    --glass-border: rgba(234, 179, 8, 0.15);
+    --text-primary: #fef9c3;
+    --text-secondary: #cbd5e1;
+    --cv-primary-color: #eab308;
+    --cv-accent-color: #022c22;
+    --glow-effect: 0 0 20px rgba(234, 179, 8, 0.15);
+}
+[data-holiday="back-to-school"][data-theme="light"] {
+    --bg-body: #fffbeb;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(202, 138, 4, 0.2);
+    --text-primary: #422006;
+    --text-secondary: #854d0e;
+    --cv-primary-color: #ca8a04;
+    --cv-accent-color: #fef9c3;
+    --glow-effect: none;
+}
+
+/* Automne & Thanksgiving (Cuivré/Ambré) */
+[data-holiday="autumn"][data-theme="dark"] {
+    --bg-body: #2d1706;
+    --bg-container: rgba(45, 23, 6, 0.7);
+    --glass-border: rgba(249, 115, 22, 0.15);
+    --text-primary: #ffedd5;
+    --text-secondary: #fdba74;
+    --cv-primary-color: #f97316;
+    --cv-accent-color: #431407;
+    --glow-effect: 0 0 25px rgba(249, 115, 22, 0.2);
+}
+[data-holiday="autumn"][data-theme="light"] {
+    --bg-body: #fff7ed;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(249, 115, 22, 0.25);
+    --text-primary: #451a03;
+    --text-secondary: #c2410c;
+    --cv-primary-color: #ea580c;
+    --cv-accent-color: #ffedd5;
+    --glow-effect: none;
+}
+
 /* --- BASE STYLES --- */
 body {
     font-family: var(--font-main);
