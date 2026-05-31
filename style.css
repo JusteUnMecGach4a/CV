@@ -699,15 +699,24 @@ body {
     align-items: center;
 }
 
-#theme-toggle {
-    backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--glass-border);
-    color: white;
-    border-radius: 14px;
-    padding: 0.6rem 1.2rem;
-    font-weight: 600;
-    transition: var(--transition-smooth);
+#theme-toggle, #accessibility-btn {
+    backdrop-filter: blur(12px) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid var(--glass-border) !important;
+    color: white !important;
+    border-radius: 14px !important;
+    padding: 0.6rem 1.2rem !important;
+    font-weight: 600 !important;
+    transition: var(--transition-smooth) !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#accessibility-btn {
+    padding: 0.6rem 1rem !important;
 }
 
 #holiday-theme-select {
@@ -738,9 +747,11 @@ body {
     color: white;
 }
 
-[data-theme="light"] #theme-toggle {
-    color: var(--text-primary);
-    background: rgba(0, 0, 0, 0.05);
+[data-theme="light"] #theme-toggle,
+[data-theme="light"] #accessibility-btn {
+    color: var(--text-primary) !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-color: var(--glass-border) !important;
 }
 
 [data-theme="light"] #holiday-theme-select {
@@ -754,9 +765,22 @@ body {
     color: var(--text-primary);
 }
 
-#theme-toggle:hover {
-    transform: rotate(5deg) scale(1.1);
-    background: rgba(255, 255, 255, 0.2);
+#theme-toggle:hover, #accessibility-btn:hover,
+#theme-toggle:focus, #accessibility-btn:focus,
+#theme-toggle:active, #accessibility-btn:active {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+[data-theme="light"] #theme-toggle:hover, [data-theme="light"] #accessibility-btn:hover,
+[data-theme="light"] #theme-toggle:focus, [data-theme="light"] #accessibility-btn:focus,
+[data-theme="light"] #theme-toggle:active, [data-theme="light"] #accessibility-btn:active {
+    background: rgba(0, 0, 0, 0.1) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 #holiday-theme-select:hover, #holiday-theme-select:focus {
@@ -959,30 +983,7 @@ body[data-holiday="pride-month"][data-theme="light"] .holiday-badge {
     position: relative;
 }
 
-#accessibility-btn {
-    backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--glass-border);
-    color: white;
-    border-radius: 14px;
-    padding: 0.6rem 1rem;
-    font-weight: 600;
-    transition: var(--transition-smooth);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
 
-#accessibility-btn:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-[data-theme="light"] #accessibility-btn {
-    color: var(--text-primary);
-    background: rgba(0, 0, 0, 0.05);
-}
 
 .accessibility-menu {
     position: absolute;
