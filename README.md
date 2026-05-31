@@ -15,7 +15,7 @@ Je me distingue par une **attention exceptionnelle aux détails, une grande capa
 
 ## 🎨 Fonctionnalités Phares du CV Numérique
 
-### 1. Moteur Saisonnier Dynamique (10 Fêtes)
+### 1. Moteur Saisonnier Dynamique (21 Fêtes)
 Le site dispose d'un **moteur de détection temporelle en JavaScript** qui calcule automatiquement la distance en jours entre la date d'aujourd'hui et les principales fêtes de l'année. 
 Le site applique automatiquement le thème de la **fête active la plus proche**. En l'absence de fête, il utilise le thème neutre par défaut. 
 Chaque fête redéfinit entièrement la palette de couleurs en **mode Clair** et en **mode Sombre** (variables CSS) et affiche une bannière animée dédiée dans le header :
@@ -29,6 +29,7 @@ Chaque fête redéfinit entièrement la palette de couleurs en **mode Clair** et
 * **Fête du Travail** : Tons Vert Muguet & Émeraude (`🌸`)
 * **Fête des Mères** : Tons Rose Poudré & Or Rose (`❤️` animée)
 * **Fête des Pères** : Tons Oxford & Bleu Denim (`👔`)
+* **Mois des Fiertés (Pride Month)** : Dégradé Arc-en-ciel vibrant ou pastel avec bannière arc-en-ciel dédiée (`🌈`)
 * **Solstice d'Été (Bel Été)** : Tons Soleil Jaune & Sable (`☀️`)
 * **Fête de la Musique** : Synthwave Violet/Cyan (`🎵`)
 * **Fête du Cinéma** : Tons Tapis Rouge & Or (`🎬`)

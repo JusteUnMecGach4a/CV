@@ -487,6 +487,54 @@
     --glow-effect: none;
 }
 
+/* Pride Month (Mois des Fiertés - Rainbow theme) */
+[data-holiday="pride-month"][data-theme="dark"] {
+    --bg-body: #090514;
+    --bg-container: rgba(15, 8, 30, 0.75);
+    --glass-border: rgba(236, 72, 153, 0.2);
+    --text-primary: #faf5ff;
+    --text-secondary: #e9d5ff;
+    --cv-primary-color: #f43f5e;
+    --cv-accent-color: #1e1b4b;
+    --glow-effect: 0 0 25px rgba(236, 72, 153, 0.25);
+}
+[data-holiday="pride-month"][data-theme="light"] {
+    --bg-body: #fff9fb;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(236, 72, 153, 0.3);
+    --text-primary: #3b0764;
+    --text-secondary: #701a75;
+    --cv-primary-color: #ec4899;
+    --cv-accent-color: #fce7f3;
+    --glow-effect: none;
+}
+
+/* Overrides for Pride Month Rainbow Gradient Header */
+body[data-holiday="pride-month"][data-theme="dark"] .cv-header {
+    background: linear-gradient(135deg, #e91e63, #ff5722, #ffeb3b, #4caf50, #2196f3, #9c27b0) !important;
+    color: white !important;
+    box-shadow: 0 0 35px rgba(236, 72, 153, 0.3);
+}
+body[data-holiday="pride-month"][data-theme="light"] .cv-header {
+    background: linear-gradient(135deg, #f8bbd0, #ffe0b2, #fff9c4, #c8e6c9, #bbdefb, #e1bee7) !important;
+    color: #3b0764 !important;
+}
+
+/* Style for links inside the header to make them perfectly legible */
+.cv-header a {
+    color: inherit !important;
+    text-decoration: underline;
+    opacity: 0.9;
+    transition: var(--transition-smooth);
+}
+.cv-header a:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+body[data-theme="light"] .cv-header a:hover {
+    text-shadow: 0 0 8px rgba(59, 7, 100, 0.3);
+}
+
 /* --- BASE STYLES --- */
 body {
     font-family: var(--font-main);
@@ -680,7 +728,7 @@ body {
 
 /* --- PRINT --- */
 @media print {
-    :root {
+    :root, [data-holiday] {
         /* High-contrast and clean print values */
         --bg-body: #ffffff !important;
         --bg-container: #ffffff !important;
@@ -714,11 +762,11 @@ body {
         print-color-adjust: exact !important;
     }
 
-    #theme-toggle {
+    #theme-toggle, .holiday-banner {
         display: none !important;
     }
 
-    .cv-header {
+    .cv-header, body[data-holiday] .cv-header {
         clip-path: none !important;
         padding: 2.5rem 1.5rem !important;
         background: #f1f5f9 !important; /* Clean readable header background */
