@@ -178,6 +178,7 @@
     <script>
         const body = document.body;
         const themeToggleBtn = document.getElementById('theme-toggle');
+        const holidayThemeSelect = document.getElementById('holiday-theme-select');
 
         const HOLIDAYS = [
             { name: 'new-year', month: 0, day: 1, beforeRange: 7, afterRange: 3 },
@@ -255,8 +256,6 @@
             
             return 'neutral';
         }
-
-        const holidayThemeSelect = document.getElementById('holiday-theme-select');
 
         function updateHolidayTheme() {
             let selected = localStorage.getItem('cv-holiday-theme') || 'auto';

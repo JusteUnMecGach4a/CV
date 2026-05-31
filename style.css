@@ -711,6 +711,11 @@ body {
 }
 
 #holiday-theme-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 220px;
+    width: 100%;
     backdrop-filter: blur(12px);
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid var(--glass-border);
