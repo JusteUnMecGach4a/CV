@@ -24,6 +24,12 @@
 
             <div class="reveal">
                 <h1 class="display-4 fw-800 mb-2">LÉO CANOVA-PRÉVOT</h1>
+                <!-- Holiday Banner -->
+                <div class="holiday-banner d-none mb-3">
+                    <span class="badge bg-danger text-white px-3 py-2 rounded-pill shadow-sm" style="font-size: 0.9rem; border: none; background: #e91e63 !important;">
+                        <i class="bi bi-heart-fill me-2 text-white animate-beat"></i> Bonne Fête des Mères ! ❤️
+                    </span>
+                </div>
                 <p class="lead fw-400 opacity-90 mb-4">Futur Technicien Cybersécurité | Réseaux et Développement Web</p>
                 
                 <div class="header-links d-flex justify-content-center flex-wrap gap-3 small fw-500">
@@ -132,7 +138,7 @@
                         </div>
                     </section>
 
-                    <div class="text-center mt-5 reveal">
+                    <div class="text-center mt-5 reveal d-print-none">
                         <button onclick="window.print()" class="btn btn-light rounded-pill px-4 shadow-sm">
                             <i class="bi bi-file-earmark-pdf me-2"></i> Télécharger PDF
                         </button>
@@ -150,6 +156,7 @@
         const HOLIDAYS = [
             { name: 'valentine', month: 1, day: 14, range: 7 },
             { name: 'labor-day', month: 4, day: 1, range: 7 },
+            { name: 'mothers-day', month: 4, day: 31, range: 7 },
             { name: 'national-day', month: 4, day: 8, range: 3 },
             { name: 'national-day', month: 6, day: 14, range: 7 },
             { name: 'halloween', month: 9, day: 31, range: 7 },
@@ -186,6 +193,10 @@
         function initHoliday() {
             const holiday = getActiveHoliday();
             body.setAttribute('data-holiday', holiday);
+            if (holiday === 'mothers-day') {
+                const banner = document.querySelector('.holiday-banner');
+                if (banner) banner.classList.remove('d-none');
+            }
         }
 
         themeToggleBtn.addEventListener('click', () => {

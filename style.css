@@ -58,6 +58,43 @@
     --glow-effect: 0 0 25px rgba(248, 113, 113, 0.15);
 }
 
+/* Fête des Mères (Rose Poudré & Or Rose) - DARK */
+[data-holiday="mothers-day"][data-theme="dark"] {
+    --bg-body: #2d0b1e;
+    --bg-container: rgba(45, 11, 30, 0.65);
+    --glass-border: rgba(244, 143, 177, 0.15);
+    --text-primary: #fce4ec;
+    --text-secondary: #f8bbd0;
+    --cv-primary-color: #f48fb1;
+    --cv-accent-color: #880e4f;
+    --glow-effect: 0 0 25px rgba(244, 143, 177, 0.2);
+}
+
+/* Fête des Mères (Blush Soft & Plum) - LIGHT */
+[data-holiday="mothers-day"][data-theme="light"] {
+    --bg-body: #fff5f7;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(248, 187, 208, 0.3);
+    --text-primary: #4a148c;
+    --text-secondary: #880e4f;
+    --cv-primary-color: #e91e63;
+    --cv-accent-color: #f8bbd0;
+    --glow-effect: none;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.12); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.12); }
+    70% { transform: scale(1); }
+}
+
+.animate-beat {
+    display: inline-block;
+    animation: heartBeat 1.4s infinite ease-in-out;
+}
+
 /* Noël (Rouge/Vert/Or) - DARK */
 [data-holiday="christmas"][data-theme="dark"] {
     --bg-body: #022c22;
