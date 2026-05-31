@@ -34,19 +34,29 @@
 
 /* --- THEMES PAR FÊTE --- */
 
-/* Fête du Travail (Vert/Blanc) - DARK */
-[data-holiday="labor-day"][data-theme="dark"] {
-    --bg-body: #052e16;
-    --bg-container: rgba(6, 78, 59, 0.6);
-    --glass-border: rgba(52, 211, 153, 0.15);
-    --text-primary: #ecfdf5;
-    --text-secondary: #a7f3d0;
-    --cv-primary-color: #34d399;
-    --cv-accent-color: #064e3b;
-    --glow-effect: 0 0 25px rgba(52, 211, 153, 0.15);
+/* Nouvel An (Midnight Neon & Or) */
+[data-holiday="new-year"][data-theme="dark"] {
+    --bg-body: #0b0f19;
+    --bg-container: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(245, 158, 11, 0.15);
+    --text-primary: #fafafa;
+    --text-secondary: #cbd5e1;
+    --cv-primary-color: #f59e0b;
+    --cv-accent-color: #1e1b4b;
+    --glow-effect: 0 0 25px rgba(245, 158, 11, 0.2);
+}
+[data-holiday="new-year"][data-theme="light"] {
+    --bg-body: #f8fafc;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(245, 158, 11, 0.25);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --cv-primary-color: #d97706;
+    --cv-accent-color: #fef3c7;
+    --glow-effect: none;
 }
 
-/* Saint-Valentin (Rose/Rouge) - DARK */
+/* Saint-Valentin (Rose/Rouge) */
 [data-holiday="valentine"][data-theme="dark"] {
     --bg-body: #450a0a;
     --bg-container: rgba(127, 29, 29, 0.6);
@@ -57,8 +67,62 @@
     --cv-accent-color: #7f1d1d;
     --glow-effect: 0 0 25px rgba(248, 113, 113, 0.15);
 }
+[data-holiday="valentine"][data-theme="light"] {
+    --bg-body: #fff5f5;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(248, 113, 113, 0.3);
+    --text-primary: #7f1d1d;
+    --text-secondary: #991b1b;
+    --cv-primary-color: #ef4444;
+    --cv-accent-color: #fee2e2;
+    --glow-effect: none;
+}
 
-/* Fête des Mères (Rose Poudré & Or Rose) - DARK */
+/* Pâques (Lime & Jaune Pastel) */
+[data-holiday="easter"][data-theme="dark"] {
+    --bg-body: #1e293b;
+    --bg-container: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(163, 230, 53, 0.15);
+    --text-primary: #fef08a;
+    --text-secondary: #a3e635;
+    --cv-primary-color: #a3e635;
+    --cv-accent-color: #422006;
+    --glow-effect: 0 0 20px rgba(163, 230, 53, 0.2);
+}
+[data-holiday="easter"][data-theme="light"] {
+    --bg-body: #fefce8;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(163, 230, 53, 0.2);
+    --text-primary: #1c1917;
+    --text-secondary: #3f6212;
+    --cv-primary-color: #65a30d;
+    --cv-accent-color: #fef08a;
+    --glow-effect: none;
+}
+
+/* Fête du Travail (Vert/Blanc) */
+[data-holiday="labor-day"][data-theme="dark"] {
+    --bg-body: #052e16;
+    --bg-container: rgba(6, 78, 59, 0.6);
+    --glass-border: rgba(52, 211, 153, 0.15);
+    --text-primary: #ecfdf5;
+    --text-secondary: #a7f3d0;
+    --cv-primary-color: #34d399;
+    --cv-accent-color: #064e3b;
+    --glow-effect: 0 0 25px rgba(52, 211, 153, 0.15);
+}
+[data-holiday="labor-day"][data-theme="light"] {
+    --bg-body: #f0fdf4;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(52, 211, 153, 0.3);
+    --text-primary: #065f46;
+    --text-secondary: #047857;
+    --cv-primary-color: #10b981;
+    --cv-accent-color: #d1fae5;
+    --glow-effect: none;
+}
+
+/* Fête des Mères (Rose Poudré & Or Rose) */
 [data-holiday="mothers-day"][data-theme="dark"] {
     --bg-body: #2d0b1e;
     --bg-container: rgba(45, 11, 30, 0.65);
@@ -69,8 +133,6 @@
     --cv-accent-color: #880e4f;
     --glow-effect: 0 0 25px rgba(244, 143, 177, 0.2);
 }
-
-/* Fête des Mères (Blush Soft & Plum) - LIGHT */
 [data-holiday="mothers-day"][data-theme="light"] {
     --bg-body: #fff5f7;
     --bg-container: rgba(255, 255, 255, 0.85);
@@ -79,6 +141,116 @@
     --text-secondary: #880e4f;
     --cv-primary-color: #e91e63;
     --cv-accent-color: #f8bbd0;
+    --glow-effect: none;
+}
+
+/* Fête de la Musique (Purple Synthwave) */
+[data-holiday="music-day"][data-theme="dark"] {
+    --bg-body: #17052e;
+    --bg-container: rgba(23, 5, 46, 0.7);
+    --glass-border: rgba(192, 132, 252, 0.2);
+    --text-primary: #fae8ff;
+    --text-secondary: #e9d5ff;
+    --cv-primary-color: #c084fc;
+    --cv-accent-color: #083344;
+    --glow-effect: 0 0 25px rgba(192, 132, 252, 0.25);
+}
+[data-holiday="music-day"][data-theme="light"] {
+    --bg-body: #faf5ff;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(192, 132, 252, 0.3);
+    --text-primary: #3b0764;
+    --text-secondary: #6b21a8;
+    --cv-primary-color: #a855f7;
+    --cv-accent-color: #e9d5ff;
+    --glow-effect: none;
+}
+
+/* Fête Nationale (Bleu/Blanc/Rouge) */
+[data-holiday="national-day"][data-theme="dark"] {
+    --bg-body: #0c0a09;
+    --bg-container: rgba(28, 25, 23, 0.7);
+    --glass-border: rgba(30, 64, 175, 0.2);
+    --text-primary: #fafaf9;
+    --text-secondary: #d6d3d1;
+    --cv-primary-color: #3b82f6;
+    --cv-accent-color: #7c2d12;
+    --glow-effect: 0 0 25px rgba(59, 130, 246, 0.2);
+}
+[data-holiday="national-day"][data-theme="light"] {
+    --bg-body: #f8fafc;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(59, 130, 246, 0.3);
+    --text-primary: #1e3a8a;
+    --text-secondary: #1d4ed8;
+    --cv-primary-color: #2563eb;
+    --cv-accent-color: #dbeafe;
+    --glow-effect: none;
+}
+
+/* Halloween (Spooky Orange & Black) */
+[data-holiday="halloween"][data-theme="dark"] {
+    --bg-body: #0f0905;
+    --bg-container: rgba(20, 10, 5, 0.7);
+    --glass-border: rgba(249, 115, 22, 0.15);
+    --text-primary: #ffedd5;
+    --text-secondary: #fdba74;
+    --cv-primary-color: #f97316;
+    --cv-accent-color: #431407;
+    --glow-effect: 0 0 25px rgba(249, 115, 22, 0.25);
+}
+[data-holiday="halloween"][data-theme="light"] {
+    --bg-body: #fff7ed;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(249, 115, 22, 0.3);
+    --text-primary: #451a03;
+    --text-secondary: #7c2d12;
+    --cv-primary-color: #ea580c;
+    --cv-accent-color: #ffedd5;
+    --glow-effect: none;
+}
+
+/* Armistice (Bleuets de la Paix) */
+[data-holiday="armistice"][data-theme="dark"] {
+    --bg-body: #030712;
+    --bg-container: rgba(17, 24, 39, 0.7);
+    --glass-border: rgba(59, 130, 246, 0.15);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --cv-primary-color: #3b82f6;
+    --cv-accent-color: #1e3a8a;
+    --glow-effect: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+[data-holiday="armistice"][data-theme="light"] {
+    --bg-body: #f8fafc;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(59, 130, 246, 0.25);
+    --text-primary: #1f2937;
+    --text-secondary: #3b82f6;
+    --cv-primary-color: #2563eb;
+    --cv-accent-color: #dbeafe;
+    --glow-effect: none;
+}
+
+/* Noël (Magie Rouge/Vert/Or) */
+[data-holiday="christmas"][data-theme="dark"] {
+    --bg-body: #022c22;
+    --bg-container: rgba(6, 78, 59, 0.7);
+    --glass-border: rgba(220, 38, 38, 0.2);
+    --text-primary: #f8fafc;
+    --text-secondary: #fbbf24;
+    --cv-primary-color: #ef4444;
+    --cv-accent-color: #064e3b;
+    --glow-effect: 0 0 25px rgba(239, 68, 68, 0.2);
+}
+[data-holiday="christmas"][data-theme="light"] {
+    --bg-body: #fef2f2;
+    --bg-container: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(220, 38, 38, 0.3);
+    --text-primary: #7f1d1d;
+    --text-secondary: #15803d;
+    --cv-primary-color: #dc2626;
+    --cv-accent-color: #d1fae5;
     --glow-effect: none;
 }
 
@@ -93,30 +265,6 @@
 .animate-beat {
     display: inline-block;
     animation: heartBeat 1.4s infinite ease-in-out;
-}
-
-/* Noël (Rouge/Vert/Or) - DARK */
-[data-holiday="christmas"][data-theme="dark"] {
-    --bg-body: #022c22;
-    --bg-container: rgba(6, 78, 59, 0.7);
-    --glass-border: rgba(220, 38, 38, 0.2);
-    --text-primary: #f8fafc;
-    --text-secondary: #fbbf24;
-    --cv-primary-color: #ef4444;
-    --cv-accent-color: #064e3b;
-    --glow-effect: 0 0 25px rgba(239, 68, 68, 0.2);
-}
-
-/* Fête Nationale / Victoire (Bleu/Blanc/Rouge) - DARK */
-[data-holiday="national-day"][data-theme="dark"] {
-    --bg-body: #0c0a09;
-    --bg-container: rgba(28, 25, 23, 0.7);
-    --glass-border: rgba(30, 64, 175, 0.2);
-    --text-primary: #fafaf9;
-    --text-secondary: #d6d3d1;
-    --cv-primary-color: #3b82f6;
-    --cv-accent-color: #7c2d12;
-    --glow-effect: 0 0 25px rgba(59, 130, 246, 0.2);
 }
 
 /* --- BASE STYLES --- */

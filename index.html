@@ -154,29 +154,79 @@
 
         // Configuration des dates des fêtes
         const HOLIDAYS = [
-            { name: 'valentine', month: 1, day: 14, range: 7 },
-            { name: 'labor-day', month: 4, day: 1, range: 7 },
-            { name: 'mothers-day', month: 4, day: 31, range: 7 },
-            { name: 'national-day', month: 4, day: 8, range: 3 },
-            { name: 'national-day', month: 6, day: 14, range: 7 },
-            { name: 'halloween', month: 9, day: 31, range: 7 },
-            { name: 'national-day', month: 10, day: 11, range: 3 },
-            { name: 'christmas', month: 11, day: 25, range: 15 }
+            { name: 'new-year', month: 0, day: 1, beforeRange: 7, afterRange: 3 },
+            { name: 'valentine', month: 1, day: 14, beforeRange: 7, afterRange: 1 },
+            { name: 'easter', month: 3, day: 12, beforeRange: 5, afterRange: 2 },
+            { name: 'labor-day', month: 4, day: 1, beforeRange: 5, afterRange: 1 },
+            { name: 'mothers-day', month: 4, day: 31, beforeRange: 7, afterRange: 1 },
+            { name: 'music-day', month: 5, day: 21, beforeRange: 5, afterRange: 2 },
+            { name: 'national-day', month: 6, day: 14, beforeRange: 5, afterRange: 1 },
+            { name: 'halloween', month: 9, day: 31, beforeRange: 8, afterRange: 2 },
+            { name: 'armistice', month: 10, day: 11, beforeRange: 3, afterRange: 1 },
+            { name: 'christmas', month: 11, day: 25, beforeRange: 15, afterRange: 4 }
         ];
+
+        const HOLIDAY_METADATA = {
+            'new-year': { text: "Bonne Année ! ✨", icon: "bi-stars", color: "#f59e0b" },
+            'valentine': { text: "Joyeuse Saint-Valentin ! ❤️", icon: "bi-heart-fill", color: "#f87171", animate: "animate-beat" },
+            'easter': { text: "Joyeuses Pâques ! 🐣", icon: "bi-egg-fill", color: "#84cc16" },
+            'labor-day': { text: "Joyeuse Fête du Travail ! 🌸", icon: "bi-flower1", color: "#10b981" },
+            'mothers-day': { text: "Bonne Fête des Mères ! ❤️", icon: "bi-heart-fill", color: "#e91e63", animate: "animate-beat" },
+            'music-day': { text: "Bonne Fête de la Musique ! 🎵", icon: "bi-music-note-beamed", color: "#a855f7" },
+            'national-day': { text: "Bonne Fête Nationale ! 🇫🇷", icon: "bi-flag-fill", color: "#3b82f6" },
+            'halloween': { text: "Joyeux Halloween ! 🎃", icon: "bi-ghost", color: "#ea580c" },
+            'armistice': { text: "Armistice - Devoir de Mémoire 🕊️", icon: "bi-peace", color: "#6b7280" },
+            'christmas': { text: "Joyeux Noël ! 🎄", icon: "bi-gift-fill", color: "#ef4444" }
+        };
 
         function getActiveHoliday() {
             const now = new Date();
-            const currentMonth = now.getMonth();
-            const currentDay = now.getDate();
+            const currentYear = now.getFullYear();
+            let activeHolidays = [];
 
             for (const holiday of HOLIDAYS) {
-                const holidayDate = new Date(now.getFullYear(), holiday.month, holiday.day);
-                const diffTime = holidayDate - now;
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                if (currentMonth === holiday.month && currentDay === holiday.day) return holiday.name;
-                if (diffDays > 0 && diffDays <= holiday.range) return holiday.name;
+                for (const yearOffset of [-1, 0, 1]) {
+                    const year = currentYear + yearOffset;
+                    const holidayDate = new Date(year, holiday.month, holiday.day);
+                    const diffTime = holidayDate - now;
+                    const diffDays = diffTime / (1000 * 60 * 60 * 24);
+                    
+                    if (diffDays >= -holiday.afterRange && diffDays <= holiday.beforeRange) {
+                        activeHolidays.push({
+                            name: holiday.name,
+                            distance: Math.abs(diffDays)
+                        });
+                    }
+                }
             }
+
+            if (activeHolidays.length > 0) {
+                activeHolidays.sort((a, b) => a.distance - b.distance);
+                return activeHolidays[0].name;
+            }
+            
             return 'neutral';
+        }
+
+        function initHoliday() {
+            const holiday = getActiveHoliday();
+            body.setAttribute('data-holiday', holiday);
+            
+            const banner = document.querySelector('.holiday-banner');
+            if (banner) {
+                if (holiday !== 'neutral' && HOLIDAY_METADATA[holiday]) {
+                    const data = HOLIDAY_METADATA[holiday];
+                    const animClass = data.animate || '';
+                    banner.innerHTML = `
+                        <span class="badge text-white px-3 py-2 rounded-pill shadow-sm" style="font-size: 0.9rem; border: none; background: ${data.color} !important;">
+                            <i class="bi ${data.icon} me-2 text-white ${animClass}"></i> ${data.text}
+                        </span>
+                    `;
+                    banner.classList.remove('d-none');
+                } else {
+                    banner.classList.add('d-none');
+                }
+            }
         }
 
         function updateButton(currentTheme) {
@@ -188,15 +238,6 @@
             body.setAttribute('data-theme', theme);
             localStorage.setItem('cv-theme', theme);
             updateButton(theme);
-        }
-
-        function initHoliday() {
-            const holiday = getActiveHoliday();
-            body.setAttribute('data-holiday', holiday);
-            if (holiday === 'mothers-day') {
-                const banner = document.querySelector('.holiday-banner');
-                if (banner) banner.classList.remove('d-none');
-            }
         }
 
         themeToggleBtn.addEventListener('click', () => {
