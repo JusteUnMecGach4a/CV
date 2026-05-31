@@ -908,4 +908,228 @@ body {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
+    
+    .accessibility-widget {
+        display: none !important;
+    }
+}
+
+/* --- HOLIDAY BADGE DESIGN (HIGH LEGIBILITY) --- */
+.holiday-badge {
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    padding: 0.5rem 1.2rem !important;
+    border-radius: 100px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06) !important;
+    transition: var(--transition-smooth);
+}
+
+[data-theme="dark"] .holiday-badge {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .holiday-badge {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Special Pride Month Badge styling over rainbow header */
+body[data-holiday="pride-month"][data-theme="dark"] .holiday-badge {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    color: white !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+body[data-holiday="pride-month"][data-theme="light"] .holiday-badge {
+    background: rgba(255, 255, 255, 0.45) !important;
+    border: 1px solid rgba(59, 7, 100, 0.2) !important;
+    color: #3b0764 !important;
+    text-shadow: none;
+}
+
+/* --- ACCESSIBILITY WIDGET & PANEL --- */
+.accessibility-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+#accessibility-toggle {
+    width: 54px;
+    height: 54px;
+    background: var(--cv-primary-color);
+    border: 1px solid var(--glass-border);
+    color: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+#accessibility-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: var(--cv-primary-color);
+    filter: brightness(1.15);
+}
+
+.accessibility-menu {
+    position: absolute;
+    bottom: 4.5rem;
+    right: 0;
+    width: 270px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: var(--bg-container);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    transition: var(--transition-smooth);
+    color: var(--text-primary);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2) !important;
+    text-align: left;
+}
+
+.accessibility-menu h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.accessibility-menu .btn-outline-secondary {
+    border-color: var(--glass-border);
+    color: var(--text-secondary);
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.accessibility-menu .btn-outline-secondary:hover,
+.accessibility-menu .btn-outline-secondary.active {
+    background: var(--cv-primary-color) !important;
+    border-color: var(--cv-primary-color) !important;
+    color: white !important;
+}
+
+.accessibility-menu .form-check-input {
+    cursor: pointer;
+}
+
+.accessibility-menu .form-check-input:checked {
+    background-color: var(--cv-primary-color);
+    border-color: var(--cv-primary-color);
+}
+
+.accessibility-menu .form-check-label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Accessibility Modifiers on Body */
+
+/* 1. Dyslexia-friendly font override */
+body.access-dyslexia,
+body.access-dyslexia * {
+    font-family: 'Comic Sans MS', 'Arial', 'Segoe UI', sans-serif !important;
+}
+
+/* 2. Motionless mode override (no animations, transitions) */
+body.access-no-motion,
+body.access-no-motion * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+/* 3. High Contrast Mode (WCAG AAA contrast ratio) */
+body.access-high-contrast {
+    --bg-body: #000000 !important;
+    --bg-container: #000000 !important;
+    --text-primary: #ffffff !important;
+    --text-secondary: #ffff00 !important; /* High contrast yellow */
+    --cv-primary-color: #00ffff !important; /* Cyan */
+    --cv-accent-color: #1e1b4b !important;
+    --glass-border: #ffffff !important;
+    --glow-effect: none !important;
+    --shadow-soft: none !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.access-high-contrast .cv-container {
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+}
+
+body.access-high-contrast .cv-header {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-bottom: 3px solid #ffffff !important;
+    clip-path: none !important;
+}
+
+body.access-high-contrast .section-title {
+    color: #00ffff !important;
+}
+
+body.access-high-contrast .section-title::after {
+    background: #ffffff !important;
+}
+
+body.access-high-contrast .timeline-item {
+    border-left-color: #ffffff !important;
+}
+
+body.access-high-contrast .timeline-item::before {
+    background: #ffff00 !important;
+    box-shadow: 0 0 0 5px #000000 !important;
+}
+
+body.access-high-contrast .badge {
+    background: #000000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+body.access-high-contrast .badge:hover {
+    background: #ffff00 !important;
+    color: #000000 !important;
+}
+
+body.access-high-contrast .progress {
+    background: #333333 !important;
+    border: 1px solid #ffffff !important;
+}
+
+body.access-high-contrast .progress-bar {
+    background: #00ffff !important;
+}
+
+body.access-high-contrast .project-card {
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+}
+
+body.access-high-contrast .holiday-badge {
+    background: #000000 !important;
+    border: 2px solid #ffff00 !important;
+    color: #ffff00 !important;
+}
+
+@media (max-width: 576px) {
+    .accessibility-widget {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    .accessibility-menu {
+        bottom: 4rem;
+        width: 245px;
+    }
 }

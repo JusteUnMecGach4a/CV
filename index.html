@@ -273,9 +273,14 @@
                 if (activeHoliday !== 'neutral' && HOLIDAY_METADATA[activeHoliday]) {
                     const data = HOLIDAY_METADATA[activeHoliday];
                     const animClass = data.animate || '';
+                    
+                    // Determine if the icon color is a gradient
+                    const isGradient = data.color.includes('linear-gradient');
+                    const iconStyle = isGradient ? 'color: white;' : `color: ${data.color} !important;`;
+
                     banner.innerHTML = `
-                        <span class="badge text-white px-3 py-2 rounded-pill shadow-sm" style="font-size: 0.9rem; border: none; background: ${data.color} !important;">
-                            <i class="bi ${data.icon} me-2 text-white ${animClass}"></i> ${data.text}
+                        <span class="badge holiday-badge shadow-sm">
+                            <i class="bi ${data.icon} me-2 ${animClass}" style="${iconStyle}"></i> ${data.text}
                         </span>
                     `;
                     banner.classList.remove('d-none');
@@ -318,10 +323,147 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+        // --- ACCESSIBILITY SYSTEM ---
+        const accessToggle = document.getElementById('accessibility-toggle');
+        const accessMenu = document.getElementById('accessibility-menu');
+        const fontSizeDec = document.getElementById('font-size-dec');
+        const fontSizeNorm = document.getElementById('font-size-norm');
+        const fontSizeInc = document.getElementById('font-size-inc');
+        const contrastSwitch = document.getElementById('contrast-switch');
+        const dyslexiaSwitch = document.getElementById('dyslexia-switch');
+        const motionSwitch = document.getElementById('motion-switch');
+
+        // Toggle panel
+        accessToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            accessMenu.classList.toggle('d-none');
+            const expanded = !accessMenu.classList.contains('d-none');
+            accessToggle.setAttribute('aria-expanded', expanded);
+        });
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            if (!accessMenu.contains(e.target) && e.target !== accessToggle) {
+                accessMenu.classList.add('d-none');
+                accessToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Prevent closing when clicking inside the menu
+        accessMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        // Font size control
+        function setFontSize(scale) {
+            let percentage = '100%';
+            if (scale === 'dec') percentage = '85%';
+            if (scale === 'inc') percentage = '115%';
+
+            document.documentElement.style.fontSize = percentage;
+            localStorage.setItem('cv-accessibility-font', scale);
+
+            // Active button styling
+            fontSizeDec.classList.toggle('active', scale === 'dec');
+            fontSizeNorm.classList.toggle('active', scale === 'norm');
+            fontSizeInc.classList.toggle('active', scale === 'inc');
+        }
+
+        fontSizeDec.addEventListener('click', () => setFontSize('dec'));
+        fontSizeNorm.addEventListener('click', () => setFontSize('norm'));
+        fontSizeInc.addEventListener('click', () => setFontSize('inc'));
+
+        // High Contrast control
+        contrastSwitch.addEventListener('change', (e) => {
+            const active = e.target.checked;
+            body.classList.toggle('access-high-contrast', active);
+            localStorage.setItem('cv-accessibility-contrast', active ? 'true' : 'false');
+        });
+
+        // Dyslexia Font control
+        dyslexiaSwitch.addEventListener('change', (e) => {
+            const active = e.target.checked;
+            body.classList.toggle('access-dyslexia', active);
+            localStorage.setItem('cv-accessibility-dyslexia', active ? 'true' : 'false');
+        });
+
+        // Animations / Motion control
+        motionSwitch.addEventListener('change', (e) => {
+            const active = e.target.checked;
+            body.classList.toggle('access-no-motion', !active);
+            localStorage.setItem('cv-accessibility-motion', active ? 'true' : 'false');
+        });
+
+        // Load Accessibility Settings on page load
+        function initAccessibility() {
+            const savedFont = localStorage.getItem('cv-accessibility-font') || 'norm';
+            setFontSize(savedFont);
+
+            const savedContrast = localStorage.getItem('cv-accessibility-contrast') === 'true';
+            contrastSwitch.checked = savedContrast;
+            body.classList.toggle('access-high-contrast', savedContrast);
+
+            const savedDyslexia = localStorage.getItem('cv-accessibility-dyslexia') === 'true';
+            dyslexiaSwitch.checked = savedDyslexia;
+            body.classList.toggle('access-dyslexia', savedDyslexia);
+
+            const savedMotion = localStorage.getItem('cv-accessibility-motion') !== 'false'; // default is true
+            motionSwitch.checked = savedMotion;
+            body.classList.toggle('access-no-motion', !savedMotion);
+        }
+
         // Initialisation
         const savedTheme = localStorage.getItem('cv-theme') || 'dark';
         setTheme(savedTheme);
         updateHolidayTheme();
+        initAccessibility();
     </script>
+
+    <!-- Floating Accessibility Button & Menu -->
+    <div class="accessibility-widget d-print-none">
+        <button id="accessibility-toggle" class="btn btn-primary shadow-lg" aria-label="Menu Accessibilité" aria-expanded="false" aria-controls="accessibility-menu">
+            <i class="bi bi-universal-access fs-4"></i>
+        </button>
+        
+        <div id="accessibility-menu" class="accessibility-menu shadow-lg p-3 d-none">
+            <h3 class="h6 fw-bold mb-3 border-bottom pb-2 d-flex align-items-center">
+                <i class="bi bi-sliders me-2"></i> Accessibilité
+            </h3>
+            
+            <!-- Font Size Control -->
+            <div class="mb-3">
+                <label class="form-label small fw-bold mb-1"><i class="bi bi-type-size me-1"></i> Taille du texte</label>
+                <div class="btn-group btn-group-sm w-100" role="group" aria-label="Taille du texte">
+                    <button type="button" id="font-size-dec" class="btn btn-outline-secondary">A-</button>
+                    <button type="button" id="font-size-norm" class="btn btn-outline-secondary active">Normal</button>
+                    <button type="button" id="font-size-inc" class="btn btn-outline-secondary">A+</button>
+                </div>
+            </div>
+            
+            <!-- High Contrast Mode -->
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="contrast-switch">
+                <label class="form-check-label small fw-bold" for="contrast-switch">
+                    <i class="bi bi-contrast me-1"></i> Contraste élevé
+                </label>
+            </div>
+            
+            <!-- Dyslexia Font -->
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="dyslexia-switch">
+                <label class="form-check-label small fw-bold" for="dyslexia-switch">
+                    <i class="bi bi-alphabet-uppercase me-1"></i> Police Dyslexie
+                </label>
+            </div>
+            
+            <!-- Animations Toggle -->
+            <div class="form-check form-switch mb-0">
+                <input class="form-check-input" type="checkbox" role="switch" id="motion-switch" checked>
+                <label class="form-check-label small fw-bold" for="motion-switch">
+                    <i class="bi bi-play-circle me-1"></i> Animations
+                </label>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
