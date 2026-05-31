@@ -955,36 +955,38 @@ body[data-holiday="pride-month"][data-theme="light"] .holiday-badge {
 }
 
 /* --- ACCESSIBILITY WIDGET & PANEL --- */
-.accessibility-widget {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 1000;
+.accessibility-dropdown {
+    position: relative;
 }
 
-#accessibility-toggle {
-    width: 54px;
-    height: 54px;
-    background: var(--cv-primary-color);
+#accessibility-btn {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid var(--glass-border);
     color: white;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    padding: 0.6rem 1rem;
+    font-weight: 600;
     transition: var(--transition-smooth);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    cursor: pointer;
 }
 
-#accessibility-toggle:hover {
-    transform: scale(1.1) rotate(15deg);
-    background: var(--cv-primary-color);
-    filter: brightness(1.15);
+#accessibility-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] #accessibility-btn {
+    color: var(--text-primary);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .accessibility-menu {
     position: absolute;
-    bottom: 4.5rem;
+    top: 3.5rem;
     right: 0;
     width: 270px;
     backdrop-filter: blur(20px);
@@ -1124,12 +1126,11 @@ body.access-high-contrast .holiday-badge {
 }
 
 @media (max-width: 576px) {
-    .accessibility-widget {
-        bottom: 1rem;
-        right: 1rem;
-    }
     .accessibility-menu {
-        bottom: 4rem;
-        width: 245px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 3.5rem;
+        width: 260px;
     }
 }
