@@ -164,8 +164,13 @@
                                         <i class="bi bi-link-45deg me-1"></i> Voir le projet
                                     </a>
                                 </div>
-                                <div class="col-md-4 text-center mt-3 mt-md-0">
+                                <div class="col-md-4 text-center mt-3 mt-md-0 d-print-none">
                                     <i class="bi bi-globe2 display-3 opacity-20"></i>
+                                </div>
+                                <!-- QR Code visible only when printing the PDF -->
+                                <div class="col-md-4 text-center mt-3 mt-md-0 d-none d-print-block">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://site-nao-final-m2fd.vercel.app/" alt="QR Code Projet Nao" class="border p-1 bg-white" style="width: 80px; height: 80px;">
+                                    <div class="text-secondary mt-1 fw-bold" style="font-size: 0.6rem; letter-spacing: 0.5px;">PROJET NAO : SCANNEZ-MOI</div>
                                 </div>
                             </div>
                         </div>
