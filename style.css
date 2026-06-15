@@ -580,6 +580,37 @@ body {
     box-shadow: none;
 }
 
+/* Profile Photo */
+.profile-photo-container {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-smooth);
+}
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.profile-photo-container:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: var(--glow-effect);
+}
+
+[data-theme="light"] .profile-photo-container {
+    border-color: var(--cv-primary-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .profile-photo-container:hover {
+    border-color: var(--cv-primary-color);
+}
+
 .cv-header h1 {
     font-weight: 800;
     letter-spacing: -2px;
@@ -924,6 +955,14 @@ body {
         print-color-adjust: exact !important;
     }
 
+    .profile-photo-container {
+        width: 80px !important;
+        height: 80px !important;
+        border: 2px solid var(--cv-primary-color) !important;
+        box-shadow: none !important;
+        margin: 0 auto 0.8rem auto !important;
+    }
+
     .cv-header h1 {
         color: #0f172a !important;
     }
@@ -1246,5 +1285,9 @@ body.access-high-contrast .holiday-badge {
     }
     .header-links span {
         padding: 0.4rem 0.8rem !important;
+    }
+    .profile-photo-container {
+        width: 90px !important;
+        height: 90px !important;
     }
 }
