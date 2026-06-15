@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2.3.0">
+    <link rel="stylesheet" href="style.css?v=2.4.0">
 </head>
 <body data-theme="dark" data-holiday="neutral">
 
@@ -92,82 +92,6 @@
 
             <!-- MAIN CONTENT A DROITE -->
             <main class="cv-main-content p-4 p-md-5">
-                <div class="header-controls d-print-none">
-                    <select id="holiday-theme-select" aria-label="Choisir le thème saisonnier">
-                        <option value="auto">🌟 Automatique (Saisonnier)</option>
-                        <option value="neutral">💼 Neutre / Professionnel</option>
-                        <option value="new-year">✨ Nouvel An</option>
-                        <option value="valentine">❤️ Saint-Valentin</option>
-                        <option value="grandmothers-day">💜 Fête des Grands-Mères</option>
-                        <option value="st-patrick">🍀 Saint-Patrick</option>
-                        <option value="spring">🌸 Printemps</option>
-                        <option value="easter">🐣 Pâques</option>
-                        <option value="earth-day">🌍 Jour de la Terre</option>
-                        <option value="labor-day">🌸 Fête du Travail</option>
-                        <option value="mothers-day">❤️ Fête des Mères</option>
-                        <option value="fathers-day">👔 Fête des Pères</option>
-                        <option value="pride-month">🌈 Mois des Fiertés</option>
-                        <option value="summer">☀️ Bel Été</option>
-                        <option value="music-day">🎵 Fête de la Musique</option>
-                        <option value="cinema-day">🎬 Fête du Cinéma</option>
-                        <option value="national-day">🇫🇷 Fête Nationale</option>
-                        <option value="back-to-school">🎒 Rentrée Scolaire</option>
-                        <option value="programmer-day">💻 Développeurs</option>
-                        <option value="halloween">🎃 Halloween</option>
-                        <option value="armistice">🕊️ Armistice</option>
-                        <option value="autumn">🍁 Automne</option>
-                        <option value="christmas">🎄 Noël</option>
-                    </select>
-                    
-                    <!-- Accessibility Dropdown Panel -->
-                    <div class="accessibility-dropdown">
-                        <button id="accessibility-btn" class="btn btn-sm" title="Menu Accessibilité" aria-label="Menu Accessibilité" aria-expanded="false" aria-controls="accessibility-menu">
-                            <i class="bi bi-universal-access fs-5"></i>
-                        </button>
-                        <div id="accessibility-menu" class="accessibility-menu shadow-lg p-3 d-none">
-                            <h3 class="h6 fw-bold mb-3 border-bottom pb-2 d-flex align-items-center text-primary">
-                                <i class="bi bi-sliders me-2"></i> Accessibilité
-                            </h3>
-                            
-                            <!-- Font Size Control -->
-                            <div class="mb-3">
-                                <label class="form-label small fw-bold mb-1"><i class="bi bi-type-size me-1"></i> Taille du texte</label>
-                                <div class="btn-group btn-group-sm w-100" role="group" aria-label="Taille du texte">
-                                    <button type="button" id="font-size-dec" class="btn btn-outline-secondary">A-</button>
-                                    <button type="button" id="font-size-norm" class="btn btn-outline-secondary active">Normal</button>
-                                    <button type="button" id="font-size-inc" class="btn btn-outline-secondary">A+</button>
-                                </div>
-                            </div>
-                            
-                            <!-- High Contrast Mode -->
-                            <div class="form-check form-switch mb-3">
-                                <input class="form-check-input" type="checkbox" role="switch" id="contrast-switch">
-                                <label class="form-check-label small fw-bold" for="contrast-switch">
-                                    <i class="bi bi-contrast me-1"></i> Contraste élevé
-                                </label>
-                            </div>
-                            
-                            <!-- Dyslexia Font -->
-                            <div class="form-check form-switch mb-3">
-                                <input class="form-check-input" type="checkbox" role="switch" id="dyslexia-switch">
-                                <label class="form-check-label small fw-bold" for="dyslexia-switch">
-                                    <i class="bi bi-alphabet-uppercase me-1"></i> Police Dyslexie
-                                </label>
-                            </div>
-                            
-                            <!-- Animations Toggle -->
-                            <div class="form-check form-switch mb-0">
-                                <input class="form-check-input" type="checkbox" role="switch" id="motion-switch" checked>
-                                <label class="form-check-label small fw-bold" for="motion-switch">
-                                    <i class="bi bi-play-circle me-1"></i> Animations
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button id="theme-toggle" class="btn btn-sm"></button>
-                </div>
-
                 <!-- QR Code for CV en ligne, visible only on print (preloaded off-screen) -->
                 <div class="qr-code-cv-print">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://justeunmecgach4a.github.io/CV/" alt="QR Code CV en ligne" class="border p-1 bg-white qr-code-cv-img">
@@ -181,21 +105,101 @@
                     </span>
                 </div>
 
-                <!-- Navigation Tabs (hidden on print) -->
-                <nav class="cv-nav-tabs d-flex justify-content-start gap-2 d-print-none flex-wrap">
-                    <button class="nav-tab-btn active" data-tab="tab-profil">
-                        <i class="bi bi-person-badge me-2"></i>Profil
-                    </button>
-                    <button class="nav-tab-btn" data-tab="tab-stage">
-                        <i class="bi bi-briefcase me-2"></i>Stage
-                    </button>
-                    <button class="nav-tab-btn" data-tab="tab-formation">
-                        <i class="bi bi-mortarboard me-2"></i>Formation
-                    </button>
-                    <button class="nav-tab-btn" data-tab="tab-projet">
-                        <i class="bi bi-rocket-takeoff me-2"></i>Projet Phare
-                    </button>
-                </nav>
+                <!-- Top Bar: Navigation Tabs & Controls (hidden on print) -->
+                <div class="d-flex justify-content-between align-items-center gap-3 mb-4 flex-wrap d-print-none">
+                    <!-- Navigation Tabs -->
+                    <nav class="cv-nav-tabs d-flex justify-content-start gap-2 flex-wrap mb-0">
+                        <button class="nav-tab-btn active" data-tab="tab-profil">
+                            <i class="bi bi-person-badge me-2"></i>Profil
+                        </button>
+                        <button class="nav-tab-btn" data-tab="tab-stage">
+                            <i class="bi bi-briefcase me-2"></i>Stage
+                        </button>
+                        <button class="nav-tab-btn" data-tab="tab-formation">
+                            <i class="bi bi-mortarboard me-2"></i>Formation
+                        </button>
+                        <button class="nav-tab-btn" data-tab="tab-projet">
+                            <i class="bi bi-rocket-takeoff me-2"></i>Projet Phare
+                        </button>
+                    </nav>
+
+                    <!-- Header Controls -->
+                    <div class="header-controls">
+                        <select id="holiday-theme-select" aria-label="Choisir le thème saisonnier">
+                            <option value="auto">🌟 Automatique (Saisonnier)</option>
+                            <option value="neutral">💼 Neutre / Professionnel</option>
+                            <option value="new-year">✨ Nouvel An</option>
+                            <option value="valentine">❤️ Saint-Valentin</option>
+                            <option value="grandmothers-day">💜 Fête des Grands-Mères</option>
+                            <option value="st-patrick">🍀 Saint-Patrick</option>
+                            <option value="spring">🌸 Printemps</option>
+                            <option value="easter">🐣 Pâques</option>
+                            <option value="earth-day">🌍 Jour de la Terre</option>
+                            <option value="labor-day">🌸 Fête du Travail</option>
+                            <option value="mothers-day">❤️ Fête des Mères</option>
+                            <option value="fathers-day">👔 Fête des Pères</option>
+                            <option value="pride-month">🌈 Mois des Fiertés</option>
+                            <option value="summer">☀️ Bel Été</option>
+                            <option value="music-day">🎵 Fête de la Musique</option>
+                            <option value="cinema-day">🎬 Fête du Cinéma</option>
+                            <option value="national-day">🇫🇷 Fête Nationale</option>
+                            <option value="back-to-school">🎒 Rentrée Scolaire</option>
+                            <option value="programmer-day">💻 Développeurs</option>
+                            <option value="halloween">🎃 Halloween</option>
+                            <option value="armistice">🕊️ Armistice</option>
+                            <option value="autumn">🍁 Automne</option>
+                            <option value="christmas">🎄 Noël</option>
+                        </select>
+                        
+                        <!-- Accessibility Dropdown Panel -->
+                        <div class="accessibility-dropdown">
+                            <button id="accessibility-btn" class="btn btn-sm" title="Menu Accessibilité" aria-label="Menu Accessibilité" aria-expanded="false" aria-controls="accessibility-menu">
+                                <i class="bi bi-universal-access fs-5"></i>
+                            </button>
+                            <div id="accessibility-menu" class="accessibility-menu shadow-lg p-3 d-none">
+                                <h3 class="h6 fw-bold mb-3 border-bottom pb-2 d-flex align-items-center text-primary">
+                                    <i class="bi bi-sliders me-2"></i> Accessibilité
+                                </h3>
+                                
+                                <!-- Font Size Control -->
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold mb-1"><i class="bi bi-type-size me-1"></i> Taille du texte</label>
+                                    <div class="btn-group btn-group-sm w-100" role="group" aria-label="Taille du texte">
+                                        <button type="button" id="font-size-dec" class="btn btn-outline-secondary">A-</button>
+                                        <button type="button" id="font-size-norm" class="btn btn-outline-secondary active">Normal</button>
+                                        <button type="button" id="font-size-inc" class="btn btn-outline-secondary">A+</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- High Contrast Mode -->
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="contrast-switch">
+                                    <label class="form-check-label small fw-bold" for="contrast-switch">
+                                        <i class="bi bi-contrast me-1"></i> Contraste élevé
+                                    </label>
+                                </div>
+                                
+                                <!-- Dyslexia Font -->
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="dyslexia-switch">
+                                    <label class="form-check-label small fw-bold" for="dyslexia-switch">
+                                        <i class="bi bi-alphabet-uppercase me-1"></i> Police Dyslexie
+                                    </label>
+                                </div>
+                                
+                                <!-- Animations Toggle -->
+                                <div class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="motion-switch" checked>
+                                    <label class="form-check-label small fw-bold" for="motion-switch">
+                                        <i class="bi bi-play-circle me-1"></i> Animations
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="theme-toggle" class="btn btn-sm"></button>
+                    </div>
+                </div>
 
                 <!-- Profil Section -->
                 <section id="tab-profil" class="cv-tab-content active mb-5 reveal">

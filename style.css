@@ -815,9 +815,6 @@ body {
 
 /* --- CONTROLS --- */
 .header-controls {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
     z-index: 100;
     display: flex;
     gap: 12px;
@@ -937,8 +934,7 @@ body {
 
 @media (max-width: 768px) {
     .header-controls {
-        position: static;
-        margin: 0 auto 2.5rem auto;
+        margin: 0 auto;
         justify-content: center;
         max-width: 340px;
         width: 100%;
@@ -982,7 +978,6 @@ body {
     padding: 6px;
     border-radius: 16px;
     backdrop-filter: blur(10px);
-    margin-bottom: 2rem;
     transition: var(--transition-smooth);
 }
 
