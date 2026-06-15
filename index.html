@@ -18,240 +18,256 @@
 <body data-theme="dark" data-holiday="neutral">
 
     <div class="cv-container shadow-lg mx-auto my-0 my-md-5 overflow-hidden">
-        
-        <header class="cv-header">
-            <div class="header-controls d-print-none">
-                <select id="holiday-theme-select" aria-label="Choisir le thème saisonnier">
-                    <option value="auto">🌟 Automatique (Saisonnier)</option>
-                    <option value="neutral">💼 Neutre / Professionnel</option>
-                    <option value="new-year">✨ Nouvel An</option>
-                    <option value="valentine">❤️ Saint-Valentin</option>
-                    <option value="grandmothers-day">💜 Fête des Grands-Mères</option>
-                    <option value="st-patrick">🍀 Saint-Patrick</option>
-                    <option value="spring">🌸 Printemps</option>
-                    <option value="easter">🐣 Pâques</option>
-                    <option value="earth-day">🌍 Jour de la Terre</option>
-                    <option value="labor-day">🌸 Fête du Travail</option>
-                    <option value="mothers-day">❤️ Fête des Mères</option>
-                    <option value="fathers-day">👔 Fête des Pères</option>
-                    <option value="pride-month">🌈 Mois des Fiertés</option>
-                    <option value="summer">☀️ Bel Été</option>
-                    <option value="music-day">🎵 Fête de la Musique</option>
-                    <option value="cinema-day">🎬 Fête du Cinéma</option>
-                    <option value="national-day">🇫🇷 Fête Nationale</option>
-                    <option value="back-to-school">🎒 Rentrée Scolaire</option>
-                    <option value="programmer-day">💻 Développeurs</option>
-                    <option value="halloween">🎃 Halloween</option>
-                    <option value="armistice">🕊️ Armistice</option>
-                    <option value="autumn">🍁 Automne</option>
-                    <option value="christmas">🎄 Noël</option>
-                </select>
-                
-                <!-- Accessibility Dropdown Panel -->
-                <div class="accessibility-dropdown">
-                    <button id="accessibility-btn" class="btn btn-sm" title="Menu Accessibilité" aria-label="Menu Accessibilité" aria-expanded="false" aria-controls="accessibility-menu">
-                        <i class="bi bi-universal-access fs-5"></i>
-                    </button>
-                    <div id="accessibility-menu" class="accessibility-menu shadow-lg p-3 d-none">
-                        <h3 class="h6 fw-bold mb-3 border-bottom pb-2 d-flex align-items-center text-primary">
-                            <i class="bi bi-sliders me-2"></i> Accessibilité
-                        </h3>
-                        
-                        <!-- Font Size Control -->
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold mb-1"><i class="bi bi-type-size me-1"></i> Taille du texte</label>
-                            <div class="btn-group btn-group-sm w-100" role="group" aria-label="Taille du texte">
-                                <button type="button" id="font-size-dec" class="btn btn-outline-secondary">A-</button>
-                                <button type="button" id="font-size-norm" class="btn btn-outline-secondary active">Normal</button>
-                                <button type="button" id="font-size-inc" class="btn btn-outline-secondary">A+</button>
-                            </div>
-                        </div>
-                        
-                        <!-- High Contrast Mode -->
-                        <div class="form-check form-switch mb-3">
-                            <input class="form-check-input" type="checkbox" role="switch" id="contrast-switch">
-                            <label class="form-check-label small fw-bold" for="contrast-switch">
-                                <i class="bi bi-contrast me-1"></i> Contraste élevé
-                            </label>
-                        </div>
-                        
-                        <!-- Dyslexia Font -->
-                        <div class="form-check form-switch mb-3">
-                            <input class="form-check-input" type="checkbox" role="switch" id="dyslexia-switch">
-                            <label class="form-check-label small fw-bold" for="dyslexia-switch">
-                                <i class="bi bi-alphabet-uppercase me-1"></i> Police Dyslexie
-                            </label>
-                        </div>
-                        
-                        <!-- Animations Toggle -->
-                        <div class="form-check form-switch mb-0">
-                            <input class="form-check-input" type="checkbox" role="switch" id="motion-switch" checked>
-                            <label class="form-check-label small fw-bold" for="motion-switch">
-                                <i class="bi bi-play-circle me-1"></i> Animations
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <button id="theme-toggle" class="btn btn-sm"></button>
-            </div>
-
-            <!-- QR Code for CV en ligne, visible only on print (preloaded off-screen) -->
-            <div class="qr-code-cv-print">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://justeunmecgach4a.github.io/CV/" alt="QR Code CV en ligne" class="border p-1 bg-white qr-code-cv-img">
-                <div class="text-secondary mt-1 fw-bold qr-code-cv-text">CV INTERACTIF</div>
-            </div>
-
-            <div class="reveal">
+        <div class="cv-layout">
+            <!-- SIDEBAR GAUCHE -->
+            <aside class="cv-sidebar d-print-block">
                 <!-- Profile Photo -->
                 <div class="profile-photo-container mb-3">
                     <img src="photo.jpg" alt="Léo Canova-Prévot" class="profile-photo">
                 </div>
-                <h1 class="display-4 fw-800 mb-2">LÉO CANOVA-PRÉVOT</h1>
+                <h1 class="sidebar-name text-center">LÉO CANOVA-PRÉVOT</h1>
+                <p class="sidebar-role text-center opacity-90 mb-4">Futur Technicien Cybersécurité | Réseaux et Développement Web</p>
+                
+                <!-- Contact Links -->
+                <div class="sidebar-contact mb-4">
+                    <div class="contact-item d-flex align-items-center mb-2 gap-2 small">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>07 44 82 60 08</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center mb-2 gap-2 small">
+                        <i class="bi bi-envelope-at-fill"></i>
+                        <span><a href="mailto:coursdeleo@gmail.com" class="text-white text-decoration-none">coursdeleo@gmail.com</a></span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center mb-2 gap-2 small">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Clermont-En-Argonne (55120)</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center mb-2 gap-2 small">
+                        <i class="bi bi-github"></i>
+                        <span><a href="https://github.com/JusteUnMecGach4a/CV" target="_blank" class="text-white text-decoration-none">GitHub Profile</a></span>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="sidebar-section mb-4">
+                    <h2 class="sidebar-section-title mb-3"><i class="bi bi-tools"></i> SKILLS</h2>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge">Linux LMDE / Debian</span>
+                        <span class="badge">Cisco Networking</span>
+                        <span class="badge">TCP/IP</span>
+                        <span class="badge">Linux / Windows Server</span>
+                        <span class="badge">HTML5 / CSS3 / JS</span>
+                        <span class="badge">Next.js / Vite</span>
+                        <span class="badge">Virtualisation</span>
+                        <span class="badge">IA Générative</span>
+                        <span class="badge">Cybersécurité Offensive</span>
+                    </div>
+                </div>
+
+                <!-- Langues Section -->
+                <div class="sidebar-section">
+                    <h2 class="sidebar-section-title mb-3"><i class="bi bi-translate"></i> LANGUES</h2>
+                    <div class="d-flex flex-column gap-3">
+                        <div>
+                            <div class="d-flex justify-content-between small mb-1 fw-bold">
+                                <span>Français</span>
+                                <span>Natif</span>
+                            </div>
+                            <div class="progress" style="height: 6px; background: rgba(255, 255, 255, 0.15);">
+                                <div class="progress-bar" style="width: 100%; background: #ffffff;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-between small mb-1 fw-bold">
+                                <span>Anglais</span>
+                                <span>Technique / B2</span>
+                            </div>
+                            <div class="progress" style="height: 6px; background: rgba(255, 255, 255, 0.15);">
+                                <div class="progress-bar" style="width: 75%; background: #ffffff;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT A DROITE -->
+            <main class="cv-main-content p-4 p-md-5">
+                <div class="header-controls d-print-none">
+                    <select id="holiday-theme-select" aria-label="Choisir le thème saisonnier">
+                        <option value="auto">🌟 Automatique (Saisonnier)</option>
+                        <option value="neutral">💼 Neutre / Professionnel</option>
+                        <option value="new-year">✨ Nouvel An</option>
+                        <option value="valentine">❤️ Saint-Valentin</option>
+                        <option value="grandmothers-day">💜 Fête des Grands-Mères</option>
+                        <option value="st-patrick">🍀 Saint-Patrick</option>
+                        <option value="spring">🌸 Printemps</option>
+                        <option value="easter">🐣 Pâques</option>
+                        <option value="earth-day">🌍 Jour de la Terre</option>
+                        <option value="labor-day">🌸 Fête du Travail</option>
+                        <option value="mothers-day">❤️ Fête des Mères</option>
+                        <option value="fathers-day">👔 Fête des Pères</option>
+                        <option value="pride-month">🌈 Mois des Fiertés</option>
+                        <option value="summer">☀️ Bel Été</option>
+                        <option value="music-day">🎵 Fête de la Musique</option>
+                        <option value="cinema-day">🎬 Fête du Cinéma</option>
+                        <option value="national-day">🇫🇷 Fête Nationale</option>
+                        <option value="back-to-school">🎒 Rentrée Scolaire</option>
+                        <option value="programmer-day">💻 Développeurs</option>
+                        <option value="halloween">🎃 Halloween</option>
+                        <option value="armistice">🕊️ Armistice</option>
+                        <option value="autumn">🍁 Automne</option>
+                        <option value="christmas">🎄 Noël</option>
+                    </select>
+                    
+                    <!-- Accessibility Dropdown Panel -->
+                    <div class="accessibility-dropdown">
+                        <button id="accessibility-btn" class="btn btn-sm" title="Menu Accessibilité" aria-label="Menu Accessibilité" aria-expanded="false" aria-controls="accessibility-menu">
+                            <i class="bi bi-universal-access fs-5"></i>
+                        </button>
+                        <div id="accessibility-menu" class="accessibility-menu shadow-lg p-3 d-none">
+                            <h3 class="h6 fw-bold mb-3 border-bottom pb-2 d-flex align-items-center text-primary">
+                                <i class="bi bi-sliders me-2"></i> Accessibilité
+                            </h3>
+                            
+                            <!-- Font Size Control -->
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold mb-1"><i class="bi bi-type-size me-1"></i> Taille du texte</label>
+                                <div class="btn-group btn-group-sm w-100" role="group" aria-label="Taille du texte">
+                                    <button type="button" id="font-size-dec" class="btn btn-outline-secondary">A-</button>
+                                    <button type="button" id="font-size-norm" class="btn btn-outline-secondary active">Normal</button>
+                                    <button type="button" id="font-size-inc" class="btn btn-outline-secondary">A+</button>
+                                </div>
+                            </div>
+                            
+                            <!-- High Contrast Mode -->
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="contrast-switch">
+                                <label class="form-check-label small fw-bold" for="contrast-switch">
+                                    <i class="bi bi-contrast me-1"></i> Contraste élevé
+                                </label>
+                            </div>
+                            
+                            <!-- Dyslexia Font -->
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="dyslexia-switch">
+                                <label class="form-check-label small fw-bold" for="dyslexia-switch">
+                                    <i class="bi bi-alphabet-uppercase me-1"></i> Police Dyslexie
+                                </label>
+                            </div>
+                            
+                            <!-- Animations Toggle -->
+                            <div class="form-check form-switch mb-0">
+                                <input class="form-check-input" type="checkbox" role="switch" id="motion-switch" checked>
+                                <label class="form-check-label small fw-bold" for="motion-switch">
+                                    <i class="bi bi-play-circle me-1"></i> Animations
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="theme-toggle" class="btn btn-sm"></button>
+                </div>
+
+                <!-- QR Code for CV en ligne, visible only on print (preloaded off-screen) -->
+                <div class="qr-code-cv-print">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://justeunmecgach4a.github.io/CV/" alt="QR Code CV en ligne" class="border p-1 bg-white qr-code-cv-img">
+                    <div class="text-secondary mt-1 fw-bold qr-code-cv-text">CV INTERACTIF</div>
+                </div>
+
                 <!-- Holiday Banner -->
-                <div class="holiday-banner d-none mb-3">
+                <div class="holiday-banner d-none mb-4">
                     <span class="badge bg-danger text-white px-3 py-2 rounded-pill shadow-sm" style="font-size: 0.9rem; border: none; background: #e91e63 !important;">
                         <i class="bi bi-heart-fill me-2 text-white animate-beat"></i> Bonne Fête des Mères ! ❤️
                     </span>
                 </div>
-                <p class="lead fw-400 opacity-90 mb-4">Futur Technicien Cybersécurité | Réseaux et Développement Web</p>
-                
-                <div class="header-links d-flex justify-content-center flex-wrap gap-3 small fw-500">
-                    <span><i class="bi bi-telephone-fill me-2"></i>07 44 82 60 08</span>
-                    <span><i class="bi bi-envelope-at-fill me-2"></i><a href="mailto:coursdeleo@gmail.com" class="text-decoration-none">coursdeleo@gmail.com</a></span>
-                    <span><i class="bi bi-geo-alt-fill me-2"></i>Clermont-En-Argonne (55120)</span>
-                    <span><i class="bi bi-github me-2"></i><a href="https://github.com/JusteUnMecGach4a/CV" target="_blank" class="text-decoration-none">GitHub Profile</a></span>
-                </div>
-            </div>
-        </header>
 
-        <main class="p-4 p-md-5">
-            <div class="row g-5">
-                <div class="col-lg-8">
-                    <section class="mb-5 reveal">
-                        <h2 class="section-title"><i class="bi bi-person-badge"></i> PROFIL</h2>
-                        <p class="text-content fs-5">
-                            Étudiant passionné en <strong>1ère année de BTS CIEL option Informatique et Réseaux</strong>. Actuellement en <strong>stage de 2 mois</strong> (11 mai - 4 juillet 2026) à l'<strong>ACCS de Bar-le-Duc</strong> afin de valider ma première année de BTS, avec un focus sur le développement d'applications mobiles (PWA) et la cybersécurité.
-                        </p>
-                        <div class="alert alert-info border-0 bg-opacity-10 py-2 mt-3" style="background: var(--cv-accent-color); color: var(--cv-primary-color);">
-                            <i class="bi bi-info-circle-fill me-2"></i> Profil atypique (Autiste Asperger) : Rigueur, attention aux détails et persévérance.
-                        </div>
-                    </section>
-
-                    <section class="mb-5 reveal">
-                        <h2 class="section-title"><i class="bi bi-mortarboard"></i> FORMATION</h2>
-                        <div class="timeline-item">
-                            <div class="d-flex justify-content-between align-items-start mb-1">
-                                <h3 class="h5 fw-bold mb-0">BTS CIEL (IR)</h3>
-                                <span class="badge bg-secondary text-uppercase py-1">2025 - En cours</span>
-                            </div>
-                            <p class="text-secondary mb-0">Lycée Raymond Poincaré de Bar-le-Duc</p>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="d-flex justify-content-between align-items-start mb-1">
-                                <h3 class="h5 fw-bold mb-0">Baccalauréat STI2D option SIN</h3>
-                                <span class="badge bg-secondary text-uppercase py-1">2025</span>
-                            </div>
-                            <p class="text-secondary mb-0">Lycée Raymond Poincaré</p>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="d-flex justify-content-between align-items-start mb-1">
-                                <h3 class="h5 fw-bold mb-0">Brevet des Collèges</h3>
-                                <span class="badge bg-secondary text-uppercase py-1">2022</span>
-                            </div>
-                            <p class="text-secondary mb-0">Obtenu avec Mention Bien</p>
-                        </div>
-                    </section>
-
-                    <section class="mb-5 reveal">
-                        <h2 class="section-title"><i class="bi bi-briefcase"></i> STAGE PROFESSIONNEL</h2>
-                        <div class="timeline-item">
-                            <div class="d-flex justify-content-between align-items-start mb-1">
-                                <h3 class="h5 fw-bold mb-0">Stagiaire Informatique et Réseaux (Stage en cours)</h3>
-                                <span class="badge bg-secondary text-uppercase py-1">Mai - Juil 2026</span>
-                            </div>
-                            <p class="text-secondary fw-semibold mb-2">ACCS de Bar-le-Duc (Centres Socioculturels) — Pour la validation de la 1ère année de BTS CIEL</p>
-                            <p class="text-content mb-0">
-                                Réalisation d'un projet technique d'envergure au sein de la structure associative :
-                            </p>
-                            <ul class="text-content mt-2 mb-0 ps-3">
-                                <li class="mb-0"><strong>Application Mobile PWA :</strong> Développement d'une Progressive Web App avec Service Worker, installable sur mobile et dotée d'une mise en cache asynchrone pour un fonctionnement hors-ligne partiel.</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <section class="reveal">
-                        <h2 class="section-title"><i class="bi bi-rocket-takeoff"></i> PROJET PHARE</h2>
-                        <div class="project-card">
-                            <div class="row align-items-center">
-                                <div class="col-md-8">
-                                    <h3 class="h5 fw-bold">Site Web Dynamique "Nao"</h3>
-                                    <p class="text-secondary small mb-3">Conception d'une interface réactive avec HTML5/CSS3 et JavaScript. Focus sur l'UX et la performance.</p>
-                                    <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3">
-                                        <i class="bi bi-link-45deg me-1"></i> Voir le projet
-                                    </a>
-                                </div>
-                                <div class="col-md-4 text-center mt-3 mt-md-0 d-print-none">
-                                    <i class="bi bi-globe2 display-3 opacity-20"></i>
-                                </div>
-                                <!-- QR Code visible only when printing the PDF (preloaded off-screen) -->
-                                <div class="col-md-4 text-center mt-3 mt-md-0 qr-code-print">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://site-nao-final-m2fd.vercel.app/" alt="QR Code Projet Nao" class="border p-1 bg-white qr-code-img">
-                                    <div class="text-secondary mt-1 fw-bold qr-code-text">PROJET NAO : SCANNEZ-MOI</div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="col-lg-4">
-                    <section class="mb-5 reveal">
-                        <h2 class="section-title"><i class="bi bi-tools"></i> SKILLS</h2>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge">Linux LMDE / Debian</span>
-                            <span class="badge">Cisco Networking</span>
-                            <span class="badge">TCP/IP</span>
-                            <span class="badge">Linux / Windows Server</span>
-                            <span class="badge">HTML5 / CSS3 / JS</span>
-                            <span class="badge">Next.js / Vite</span>
-                            <span class="badge">Virtualisation</span>
-                            <span class="badge">IA Générative</span>
-                            <span class="badge">Cybersécurité Offensive</span>
-                        </div>
-                    </section>
-
-                    <section class="mb-5 reveal">
-                        <h2 class="section-title"><i class="bi bi-translate"></i> LANGUES</h2>
-                        <div class="d-flex flex-column gap-3">
-                            <div>
-                                <div class="d-flex justify-content-between small mb-1 fw-bold">
-                                    <span>Français</span>
-                                    <span>Natif</span>
-                                </div>
-                                <div class="progress" style="height: 6px; background: rgba(0,0,0,0.05);">
-                                    <div class="progress-bar" style="width: 100%; background: var(--cv-primary-color);"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="d-flex justify-content-between small mb-1 fw-bold">
-                                    <span>Anglais</span>
-                                    <span>Technique / B2</span>
-                                </div>
-                                <div class="progress" style="height: 6px; background: rgba(0,0,0,0.05);">
-                                    <div class="progress-bar" style="width: 75%; background: var(--cv-primary-color);"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="text-center mt-5 reveal d-print-none">
-                        <button onclick="window.print()" class="btn btn-light rounded-pill px-4 shadow-sm">
-                            <i class="bi bi-file-earmark-pdf me-2"></i> Télécharger PDF
-                        </button>
+                <!-- Profil Section -->
+                <section class="mb-5 reveal">
+                    <h2 class="section-title"><i class="bi bi-person-badge"></i> PROFIL</h2>
+                    <p class="text-content fs-5">
+                        Étudiant passionné en <strong>1ère année de BTS CIEL option Informatique et Réseaux</strong>. Actuellement en <strong>stage de 2 mois</strong> (11 mai - 4 juillet 2026) à l'<strong>ACCS de Bar-le-Duc</strong> afin de valider ma première année de BTS, avec un focus sur le développement d'applications mobiles (PWA) et la cybersécurité.
+                    </p>
+                    <div class="alert alert-info border-0 bg-opacity-10 py-2 mt-3" style="background: var(--cv-accent-color); color: var(--cv-primary-color);">
+                        <i class="bi bi-info-circle-fill me-2"></i> Profil atypique (Autiste Asperger) : Rigueur, attention aux détails et persévérance.
                     </div>
+                </section>
+
+                <!-- Stage Professionnel -->
+                <section class="mb-5 reveal">
+                    <h2 class="section-title"><i class="bi bi-briefcase"></i> STAGE PROFESSIONNEL</h2>
+                    <div class="timeline-item">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <h3 class="h5 fw-bold mb-0">Stagiaire Informatique et Réseaux (Stage en cours)</h3>
+                            <span class="badge bg-secondary text-uppercase py-1">Mai - Juil 2026</span>
+                        </div>
+                        <p class="text-secondary fw-semibold mb-2">ACCS de Bar-le-Duc (Centres Socioculturels) — Pour la validation de la 1ère année de BTS CIEL</p>
+                        <p class="text-content mb-0">
+                            Réalisation d'un projet technique d'envergure au sein de la structure associative :
+                        </p>
+                        <ul class="text-content mt-2 mb-0 ps-3">
+                            <li class="mb-0"><strong>Application Mobile PWA :</strong> Développement d'une Progressive Web App avec Service Worker, installable sur mobile et dotée d'une mise en cache asynchrone pour un fonctionnement hors-ligne partiel.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Formation -->
+                <section class="mb-5 reveal">
+                    <h2 class="section-title"><i class="bi bi-mortarboard"></i> FORMATION</h2>
+                    <div class="timeline-item">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <h3 class="h5 fw-bold mb-0">BTS CIEL (IR)</h3>
+                            <span class="badge bg-secondary text-uppercase py-1">2025 - En cours</span>
+                        </div>
+                        <p class="text-secondary mb-0">Lycée Raymond Poincaré de Bar-le-Duc</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <h3 class="h5 fw-bold mb-0">Baccalauréat STI2D option SIN</h3>
+                            <span class="badge bg-secondary text-uppercase py-1">2025</span>
+                        </div>
+                        <p class="text-secondary mb-0">Lycée Raymond Poincaré</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <h3 class="h5 fw-bold mb-0">Brevet des Collèges</h3>
+                            <span class="badge bg-secondary text-uppercase py-1">2022</span>
+                        </div>
+                        <p class="text-secondary mb-0">Obtenu avec Mention Bien</p>
+                    </div>
+                </section>
+
+                <!-- Projet Phare -->
+                <section class="reveal">
+                    <h2 class="section-title"><i class="bi bi-rocket-takeoff"></i> PROJET PHARE</h2>
+                    <div class="project-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h3 class="h5 fw-bold">Site Web Dynamique "Nao"</h3>
+                                <p class="text-secondary small mb-3">Conception d'une interface réactive avec HTML5/CSS3 et JavaScript. Focus sur l'UX et the performance.</p>
+                                <a href="https://site-nao-final-m2fd.vercel.app/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                    <i class="bi bi-link-45deg me-1"></i> Voir le projet
+                                </a>
+                            </div>
+                            <div class="col-md-4 text-center mt-3 mt-md-0 d-print-none">
+                                <i class="bi bi-globe2 display-3 opacity-20"></i>
+                            </div>
+                            <!-- QR Code visible only when printing the PDF (preloaded off-screen) -->
+                            <div class="col-md-4 text-center mt-3 mt-md-0 qr-code-print">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://site-nao-final-m2fd.vercel.app/" alt="QR Code Projet Nao" class="border p-1 bg-white qr-code-img">
+                                <div class="text-secondary mt-1 fw-bold qr-code-text">PROJET NAO : SCANNEZ-MOI</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Print Button (visible on screen only) -->
+                <div class="text-center mt-5 reveal d-print-none">
+                    <button onclick="window.print()" class="btn btn-light rounded-pill px-4 shadow-sm">
+                        <i class="bi bi-file-earmark-pdf me-2"></i> Télécharger PDF
+                    </button>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
 
     <script>
