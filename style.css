@@ -1101,6 +1101,10 @@ body {
         background: #ffffff !important;
     }
 
+    .cv-main-content section:first-of-type {
+        padding-right: 90px !important;
+    }
+
     .reveal {
         opacity: 1 !important;
         transform: none !important;
