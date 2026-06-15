@@ -2,23 +2,30 @@
 
 Bienvenue sur le profil de **Léo Canova-Prévot**, futur Technicien Cybersécurité, passionné par les Réseaux, les Systèmes Linux et le Développement Web.
 
-Ce dépôt héberge mon CV numérique interactif et hautement adaptatif.
+Ce dépôt héberge mon CV numérique interactif, accessible et hautement adaptatif.
 
 ---
 
-## 🚀 À Propos & Recherche
-Étudiant en **1ère année de BTS CIEL option Informatique et Réseaux**, je suis à la recherche d'un **stage de 2 mois** (du **11 mai au 4 juillet 2026**) dans le domaine de la **sécurité des systèmes d'information** ou de l'administration réseau.
+## 🚀 À Propos & Stage en Cours
+Étudiant en **1ère année de BTS CIEL option Informatique et Réseaux** au Lycée Raymond Poincaré de Bar-le-Duc. 
+Je réalise actuellement mon **stage de 1ère année (du 11 mai au 4 juillet 2026)** à l'**ACCS de Bar-le-Duc** (Centres Socioculturels) portant sur le développement d'une Progressive Web App (PWA) mobile avec service workers et cache asynchrone, ainsi que sur l'administration réseau et la cybersécurité.
 
 Je me distingue par une **attention exceptionnelle aux détails, une grande capacité de concentration et une approche méthodique** des problèmes, qualités liées à mon profil **Autiste Asperger**.
 
 ---
 
-## 🎨 Fonctionnalités Phares du CV Numérique
+## 🎨 Structure & Fonctionnalités du CV Numérique
 
-### 1. Moteur Saisonnier Dynamique (21 Fêtes)
+### 1. Mise en Page Premium & Responsive (Layout 2 Colonnes)
+Le CV a été restructuré avec une mise en page moderne en deux colonnes :
+* **Barre latérale (Sidebar) gauche** : Regroupe la photo de profil, l'état civil, les liens de contact (verticaux), ainsi que les blocs de compétences (*SKILLS*) et *LANGUES*.
+* **Zone principale droite** : Contient le menu de contrôles interactifs, la bannière de fête saisonnière et le parcours détaillé (*PROFIL*, *STAGE PROFESSIONNEL*, *FORMATION*, *PROJET PHARE*).
+* **Adaptabilité mobile** : Sur écrans mobiles et tablettes (`max-width: 991px`), la structure repasse en une colonne empilée fluide avec des informations de contact réorganisées horizontalement.
+
+### 2. Moteur Saisonnier Dynamique (21 Fêtes)
 Le site dispose d'un **moteur de détection temporelle en JavaScript** qui calcule automatiquement la distance en jours entre la date d'aujourd'hui et les principales fêtes de l'année. 
 Le site applique automatiquement le thème de la **fête active la plus proche**. En l'absence de fête, il utilise le thème neutre par défaut. 
-Chaque fête redéfinit entièrement la palette de couleurs en **mode Clair** et en **mode Sombre** (variables CSS) et affiche une bannière animée dédiée dans le header :
+Chaque fête redéfinit la palette de couleurs en **mode Clair** et en **mode Sombre** (variables CSS) et affiche une bannière animée dédiée :
 * **Nouvel An** : Tons Or & Indigo Nuit (`✨`)
 * **Saint-Valentin** : Tons Rose & Rouge Passion (`❤️` animée)
 * **Fête des Grands-Mères** : Tons Lavande & Violet (`💜` animée)
@@ -41,18 +48,25 @@ Chaque fête redéfinit entièrement la palette de couleurs en **mode Clair** et
 * **Automne & Thanksgiving** : Tons Cuivrés & Ambrés (`🍁`)
 * **Noël** : Tons Magiques Rouge/Vert/Or (`🎄`)
 
-### 2. Rendu PDF & Impression Haute Fidélité
-Le CV est doté d'une feuille de style d'impression `@media print` optimisée :
-* **Haut Contraste** : Conversion automatique des polices et fonds en couleurs claires très contrastées (bleu roi et gris ardoise).
+### 3. Système d'Accessibilité Avancé
+Un panneau de configuration dédié permet aux utilisateurs de personnaliser l'affichage :
+* **Taille du texte** : Ajustement de la taille de police globale (A-, Normal, A+).
+* **Contraste Élevé** : Thème à haut contraste (WCAG AAA) noir, blanc et jaune/cyan pour une lisibilité maximale.
+* **Police Dyslexie** : Remplacement des polices de caractères par une police plus lisible pour les personnes dyslexiques.
+* **Gestion des mouvements** : Possibilité de désactiver toutes les animations pour les personnes sensibles aux animations et transitions.
+
+### 4. Rendu PDF & Impression Haute Fidélité
+Le CV dispose d'une feuille de style d'impression `@media print` optimisée :
+* **Layout A4 adapté** : Maintien d'un format double colonne optimisé (`240px 1fr`) pour que le document tienne sur une **seule page A4**.
+* **Intégration de QR Codes** : Affichage automatique de QR codes pour accéder au CV en ligne interactif (en haut à droite) et pour le projet phare Nao, facilitant la transition papier-numérique.
 * **Forçage des Couleurs (`print-color-adjust`)** : Les barres de progression de compétences, les badges et la ligne temporelle impriment leurs couleurs exactes.
-* **Mise en page anti-rupture** : Application de règles `break-inside: avoid` empêchant le texte des cartes d'expérience ou de formation d'être coupé sur deux pages physiques différentes.
-* **Discrétion** : Les boutons d'interface (le switch de thème et le bouton de téléchargement) sont automatiquement masqués lors de l'aperçu d'impression via Bootstrap.
+* **Masquage des contrôles** : Les boutons d'interface (le switch de thème et le menu d'accessibilité) sont masqués automatiquement.
 
 ---
 
 ## 🛠️ Compétences Techniques
-* **Cybersécurité :** Analyse de logs, Kali Linux, outils offensifs.
-* **Réseaux & Systèmes :** Cisco CCNA, TCP/IP, Linux / Windows Server, Virtualisation.
+* **Réseaux & Systèmes :** Cisco CCNA, TCP/IP, Linux (Debian, LMDE) / Windows Server, Virtualisation.
+* **Cybersécurité :** Outils de sécurité défensive/offensive, analyse de logs.
 * **Développement :** HTML5, CSS3, JavaScript, Next.js, Vite.
 
 ---
