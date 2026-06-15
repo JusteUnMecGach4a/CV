@@ -854,6 +854,25 @@ body {
     letter-spacing: 0.5px !important;
 }
 
+/* Preload and hide the CV online QR code container on digital screens */
+.qr-code-cv-print {
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+}
+.qr-code-cv-img {
+    width: 70px !important;
+    height: 70px !important;
+}
+.qr-code-cv-text {
+    font-size: 0.5rem !important;
+    letter-spacing: 0.5px !important;
+}
+
 /* --- PRINT --- */
 @media print {
     :root, [data-holiday] {
@@ -981,6 +1000,20 @@ body {
         visibility: visible !important;
         display: block !important;
         flex: 0 0 auto !important;
+    }
+
+    .qr-code-cv-print {
+        position: absolute !important;
+        right: 2rem !important;
+        top: 2.2rem !important;
+        left: auto !important;
+        width: auto !important;
+        height: auto !important;
+        overflow: visible !important;
+        visibility: visible !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 }
 
@@ -1179,5 +1212,39 @@ body.access-high-contrast .holiday-badge {
         transform: translateX(-50%);
         top: 3.5rem;
         width: 260px;
+    }
+    .header-controls {
+        gap: 8px !important;
+        max-width: 100% !important;
+        padding: 0 10px !important;
+        justify-content: center !important;
+    }
+    #holiday-theme-select {
+        padding: 0.5rem 0.6rem !important;
+        font-size: 0.8rem !important;
+        border-radius: 10px !important;
+    }
+    #theme-toggle {
+        padding: 0.5rem 0.8rem !important;
+        font-size: 0.8rem !important;
+        border-radius: 10px !important;
+    }
+    #accessibility-btn {
+        padding: 0.4rem 0.6rem !important;
+        border-radius: 10px !important;
+    }
+    .cv-header h1 {
+        font-size: 2.2rem !important;
+        letter-spacing: -1px !important;
+    }
+    .cv-header p.lead {
+        font-size: 1rem !important;
+    }
+    .header-links {
+        font-size: 0.85rem !important;
+        gap: 8px !important;
+    }
+    .header-links span {
+        padding: 0.4rem 0.8rem !important;
     }
 }

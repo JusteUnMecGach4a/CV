@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.0.7">
+    <link rel="stylesheet" href="style.css?v=1.0.8">
 </head>
 <body data-theme="dark" data-holiday="neutral">
 
@@ -96,6 +96,12 @@
                 <button id="theme-toggle" class="btn btn-sm"></button>
             </div>
 
+            <!-- QR Code for CV en ligne, visible only on print (preloaded off-screen) -->
+            <div class="qr-code-cv-print">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://justeunmecgach4a.github.io/CV/" alt="QR Code CV en ligne" class="border p-1 bg-white qr-code-cv-img">
+                <div class="text-secondary mt-1 fw-bold qr-code-cv-text">CV INTERACTIF</div>
+            </div>
+
             <div class="reveal">
                 <h1 class="display-4 fw-800 mb-2">LÉO CANOVA-PRÉVOT</h1>
                 <!-- Holiday Banner -->
@@ -121,7 +127,7 @@
                     <section class="mb-5 reveal">
                         <h2 class="section-title"><i class="bi bi-person-badge"></i> PROFIL</h2>
                         <p class="text-content fs-5">
-                            Étudiant passionné en <strong>1ère année de BTS CIEL option Informatique et Réseaux</strong>. Je recherche un <strong>stage de 2 mois</strong> (11 mai - 4 juillet 2026) pour mettre mes compétences en cybersécurité au service de votre entreprise.
+                            Étudiant passionné en <strong>1ère année de BTS CIEL option Informatique et Réseaux</strong>. Actuellement en <strong>stage de 2 mois</strong> (11 mai - 4 juillet 2026) à l'<strong>ACCS de Bar-le-Duc</strong> afin de valider ma première année de BTS, avec un focus sur le développement d'applications mobiles (PWA) et la cybersécurité.
                         </p>
                         <div class="alert alert-info border-0 bg-opacity-10 py-2 mt-3" style="background: var(--cv-accent-color); color: var(--cv-primary-color);">
                             <i class="bi bi-info-circle-fill me-2"></i> Profil atypique (Autiste Asperger) : Rigueur, attention aux détails et persévérance.
@@ -150,6 +156,24 @@
                                 <span class="badge bg-secondary text-uppercase py-1">2022</span>
                             </div>
                             <p class="text-secondary mb-0">Obtenu avec Mention Bien</p>
+                        </div>
+                    </section>
+
+                    <section class="mb-5 reveal">
+                        <h2 class="section-title"><i class="bi bi-briefcase"></i> STAGE PROFESSIONNEL</h2>
+                        <div class="timeline-item">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h3 class="h5 fw-bold mb-0">Stagiaire Informatique et Réseaux (Stage en cours)</h3>
+                                <span class="badge bg-secondary text-uppercase py-1">Mai - Juil 2026</span>
+                            </div>
+                            <p class="text-secondary fw-semibold mb-2">ACCS de Bar-le-Duc (Centres Socioculturels) — Pour la validation de la 1ère année de BTS CIEL</p>
+                            <p class="text-content mb-0">
+                                Réalisation de deux projets techniques d'envergure au sein de la structure associative :
+                            </p>
+                            <ul class="text-content mt-2 mb-0 ps-3">
+                                <li class="mb-1"><strong>Application Mobile PWA :</strong> Développement d'une Progressive Web App avec Service Worker, installable sur mobile et dotée d'une mise en cache asynchrone pour un fonctionnement hors-ligne partiel.</li>
+                                <li><strong>Portail RERS Interactif :</strong> Conception en équipe (Git/Méthode Agile) d'un tableau réactif d'échanges de savoirs avec filtres cumulés en JavaScript et persistance locale via LocalStorage.</li>
+                            </ul>
                         </div>
                     </section>
 
@@ -348,8 +372,9 @@
         });
 
         function updateButton(currentTheme) {
-            const icon = currentTheme === 'dark' ? '<i class="bi bi-sun-fill me-2"></i> Clair' : '<i class="bi bi-moon-stars-fill me-2"></i> Sombre';
-            themeToggleBtn.innerHTML = icon;
+            const text = currentTheme === 'dark' ? 'Clair' : 'Sombre';
+            const iconClass = currentTheme === 'dark' ? 'bi-sun-fill' : 'bi-moon-stars-fill';
+            themeToggleBtn.innerHTML = `<i class="bi ${iconClass} me-0 me-sm-2"></i><span class="d-none d-sm-inline">${text}</span>`;
         }
 
         function setTheme(theme) {
