@@ -509,29 +509,29 @@
     --glow-effect: none;
 }
 
-/* Overrides for Pride Month Rainbow Gradient Header */
-body[data-holiday="pride-month"][data-theme="dark"] .cv-header {
+/* Overrides for Pride Month Rainbow Gradient Sidebar */
+body[data-holiday="pride-month"][data-theme="dark"] .cv-sidebar {
     background: linear-gradient(135deg, #e91e63, #ff5722, #ffeb3b, #4caf50, #2196f3, #9c27b0) !important;
     color: white !important;
     box-shadow: 0 0 35px rgba(236, 72, 153, 0.3);
 }
-body[data-holiday="pride-month"][data-theme="light"] .cv-header {
+body[data-holiday="pride-month"][data-theme="light"] .cv-sidebar {
     background: linear-gradient(135deg, #f8bbd0, #ffe0b2, #fff9c4, #c8e6c9, #bbdefb, #e1bee7) !important;
     color: #3b0764 !important;
 }
 
-/* Style for links inside the header to make them perfectly legible */
-.cv-header a {
+/* Style for links inside the sidebar to make them perfectly legible */
+.cv-sidebar a {
     color: inherit !important;
     text-decoration: underline;
     opacity: 0.9;
     transition: var(--transition-smooth);
 }
-.cv-header a:hover {
+.cv-sidebar a:hover {
     opacity: 1;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
-body[data-theme="light"] .cv-header a:hover {
+body[data-theme="light"] .cv-sidebar a:hover {
     text-shadow: 0 0 8px rgba(59, 7, 100, 0.3);
 }
 
@@ -1315,11 +1315,16 @@ body.access-high-contrast .cv-container {
     border: 2px solid #ffffff !important;
 }
 
-body.access-high-contrast .cv-header {
+body.access-high-contrast .cv-sidebar {
     background: #000000 !important;
     color: #ffffff !important;
-    border-bottom: 3px solid #ffffff !important;
-    clip-path: none !important;
+    border-right: 2px solid #ffffff !important;
+    border-bottom: 2px solid #ffffff !important;
+}
+@media (max-width: 991px) {
+    body.access-high-contrast .cv-sidebar {
+        border-right: none !important;
+    }
 }
 
 body.access-high-contrast .section-title {
@@ -1398,20 +1403,7 @@ body.access-high-contrast .holiday-badge {
         padding: 0.4rem 0.6rem !important;
         border-radius: 10px !important;
     }
-    .cv-header h1 {
-        font-size: 2.2rem !important;
-        letter-spacing: -1px !important;
-    }
-    .cv-header p.lead {
-        font-size: 1rem !important;
-    }
-    .header-links {
-        font-size: 0.85rem !important;
-        gap: 8px !important;
-    }
-    .header-links span {
-        padding: 0.4rem 0.8rem !important;
-    }
+    /* Removed old header references */
     .profile-photo-container {
         width: 90px !important;
         height: 90px !important;
